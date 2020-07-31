@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>prism on AriesMe</title>
-    <link>http://www.ariesme.com/tags/prism/</link>
+    <link>https://www.ariesme.com/tags/prism/</link>
     <description>Recent content in prism on AriesMe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 20 Oct 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.ariesme.com/tags/prism/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.ariesme.com/tags/prism/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo动态加载prism.js</title>
-      <link>http://www.ariesme.com/posts/2019/add_prism_for_hugo_automatically/</link>
+      <link>https://www.ariesme.com/posts/2019/add_prism_for_hugo_automatically/</link>
       <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.ariesme.com/posts/2019/add_prism_for_hugo_automatically/</guid>
+      <guid>https://www.ariesme.com/posts/2019/add_prism_for_hugo_automatically/</guid>
       <description>&lt;p&gt;以前&lt;a href=&#34;https://www.ariesme.com/post/2019/add_prism_for_hugo&#34;&gt;文章&lt;/a&gt;记录过怎样在Hugo中添加prism代码高亮的方法. 但是每次添加新的语言或者想换个主题就得重新去官网下载新的js和css文件, 比较繁琐. 所以今天介绍下利用&lt;a href=&#34;https://cdnjs.com/&#34;&gt;cdnjs&lt;/a&gt;来通过变量动态加载所需语言和主题的方法.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Hugo添加Prism代码高亮</title>
-      <link>http://www.ariesme.com/posts/2019/add_prism_for_hugo/</link>
+      <link>https://www.ariesme.com/posts/2019/add_prism_for_hugo/</link>
       <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.ariesme.com/posts/2019/add_prism_for_hugo/</guid>
+      <guid>https://www.ariesme.com/posts/2019/add_prism_for_hugo/</guid>
       <description>&lt;p&gt;Hugo自带的Chroma代码高亮不是很方便, 还是请出Prism.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>WordPress添加Prism代码高亮</title>
-      <link>http://www.ariesme.com/posts/2019/add_prism_for_wordpress/</link>
+      <link>https://www.ariesme.com/posts/2019/add_prism_for_wordpress/</link>
       <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.ariesme.com/posts/2019/add_prism_for_wordpress/</guid>
+      <guid>https://www.ariesme.com/posts/2019/add_prism_for_wordpress/</guid>
       <description>&lt;p&gt;在WordPress中添加和配置Prism代码高亮插件.&lt;/p&gt;</description>
     </item>
     

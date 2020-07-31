@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>wordpress on AriesMe</title>
-    <link>http://www.ariesme.com/tags/wordpress/</link>
+    <link>https://www.ariesme.com/tags/wordpress/</link>
     <description>Recent content in wordpress on AriesMe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 15 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.ariesme.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.ariesme.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>WordPress添加Prism代码高亮</title>
-      <link>http://www.ariesme.com/posts/2019/add_prism_for_wordpress/</link>
+      <link>https://www.ariesme.com/posts/2019/add_prism_for_wordpress/</link>
       <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://www.ariesme.com/posts/2019/add_prism_for_wordpress/</guid>
+      <guid>https://www.ariesme.com/posts/2019/add_prism_for_wordpress/</guid>
       <description>&lt;p&gt;在WordPress中添加和配置Prism代码高亮插件.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>WordPress关闭自动更新和版本控制</title>
-      <link>http://www.ariesme.com/posts/2018/wordpress_disable_update/</link>
+      <link>https://www.ariesme.com/posts/2018/wordpress_disable_update/</link>
       <pubDate>Mon, 17 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://www.ariesme.com/posts/2018/wordpress_disable_update/</guid>
+      <guid>https://www.ariesme.com/posts/2018/wordpress_disable_update/</guid>
       <description>&lt;p&gt;WordPress安装完成后,需要将不必要的自动更新和自动保存功能关闭.&lt;/p&gt;</description>
     </item>
     
