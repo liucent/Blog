@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nginx on AriesMe</title>
+    <link>http://www.ariesme.com/tags/nginx/</link>
+    <description>Recent content in nginx on AriesMe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.ariesme.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nginx配置多域名SSL证书</title>
+      <link>http://www.ariesme.com/posts/2019/several_domains_and_ssl_certificates_in_nginx/</link>
+      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/several_domains_and_ssl_certificates_in_nginx/</guid>
+      <description>&lt;p&gt;一直以来都只在nginx中使用过单域名以及单个SSL证书的配置. 前些天注册了个新域名并把新域名套上了cloudflare. 于是就想把新老域名都配置上同一个nginx站点, 也顺便对比下套与不套cloudflare的区别. 在网上搜索了下配置其实还是挺简单的, 只要找到原站点的配置文件并把原有的server配置再添加一个同样的并小修改下即可.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nginx强制http跳转https</title>
+      <link>http://www.ariesme.com/posts/2019/nginx_redirect_http_to_https/</link>
+      <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/nginx_redirect_http_to_https/</guid>
+      <description>&lt;p&gt;配置nginx强制http请求跳转到https, 同时也可以配置强制跳转www.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nginx配置WebSocket跳转</title>
+      <link>http://www.ariesme.com/posts/2018/nginx_redirect_websocket/</link>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2018/nginx_redirect_websocket/</guid>
+      <description>&lt;p&gt;Nginx转发WebSocket请求需要添加几个参数来升级http请求为WebSocket请求.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

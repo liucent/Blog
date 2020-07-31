@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ibus on AriesMe</title>
+    <link>http://www.ariesme.com/tags/ibus/</link>
+    <description>Recent content in ibus on AriesMe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 14 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.ariesme.com/tags/ibus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Elementary安装iBus中文输入法</title>
+      <link>http://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary_ibus/</link>
+      <pubDate>Sun, 14 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary_ibus/</guid>
+      <description>&lt;p&gt;前段时间记录了如何安装基于fcitx的输入法, 最近发现其实系统自带的有ibus中文输入法, 并且只需要简单的配置下就行了.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

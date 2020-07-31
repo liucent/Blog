@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>手动生成SSL通配符证书</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/main.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/navigators/navbar.css" />
+
+
+<link href="https://fonts.loli.net/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+
+
+<link rel="stylesheet" href="/assets/css/style.css" />
+
+    
+
+ <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/themes/prism-coy.min.css"> 
+ <link rel="stylesheet" href="https://ccdnjs.loli.net/ajax/libs/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.css"> 
+
+<link rel="stylesheet" href="/assets/css/single.css" />
+<link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
+
+
+    
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-134996642-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    <nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+    
+    
+    
+      
+    
+    
+      
+    
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="http://www.ariesme.com/">
+      <img src="/assets/images/main-logo.png">AriesMe</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      </ul>
+    </div>
+  </div>
+  
+  <img src="/assets/images/main-logo.png" class="d-none" id="main-logo">
+  <img src="/assets/images/inverted-logo.png" class="d-none" id="inverted-logo">
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/">2019</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2018/">2018</a></li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(http://www.ariesme.com/assets/images/default-hero.jpg);'>
+      </div>
+  
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/assets/images/default-avatar.png'/>
+          <h5 class="author-name">Vincent Liu</h5>
+          <p>June 8, 2019</p>
+        </div>
+  
+        <div class="title">
+          <h1>手动生成SSL通配符证书</h1>
+        </div>
+  
+        <div class="post-content" id="post-content">
+          <p>以前一直使用的LNMP自动生成的证书, 也没在意生成的是不是通配符证书. 前段时间折腾私人网盘时, 竟然触发了Let&rsquo;s Encrypt的申请证书次数限制. 遂来手动生成通配符SSL证书.</p>
+<h2 id="h2_1">安装Certbot工具</h2>
+<p>Certbot是Let&rsquo;s Encrypt官方推荐生成证书的工具. 在Terminal中运行以下命令来安装Certbot.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://dl.eff.org/certbot-auto
+sudo mv certbot-auto /usr/local/bin/certbot-auto
+sudo chown root /usr/local/bin/certbot-auto
+chmod <span style="color:#ae81ff">0755</span> /usr/local/bin/certbot-auto
+/usr/local/bin/certbot-auto --install-only
+</code></pre></div><h2 id="h2_2">申请通配符SSL证书</h2>
+<ul>
+<li>在Terminal中运行以下命令来生成通配符SSL证书(*.ariesme.com).</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">certbot-auto certonly --manual --preferred-challenges dns-01 -d *.ariesme.com --server https://acme-v02.api.letsencrypt.org/directory
+</code></pre></div><ul>
+<li>过程中会要求检测域名TXT记录, 需要先修改域名DNS TXT记录(_acme-challenge.ariesme.com)成要求的信息. 添加后在另一个Terminal窗口中用以下命令检查TXT记录是否生效. 生效后在原命令窗口中回车继续生成证书.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dig -t txt _acme-challenge.ariesme.com
+</code></pre></div><ul>
+<li>当出现如下信息时就说明生成成功了</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">- Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/ariesme.com/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/ariesme.com/privkey.pem
+</code></pre></div><ul>
+<li>LNMP新建VHOST时就可以设置上述两个文件路径来使用我们自己手动生成的通配符证书.</li>
+</ul>
+<h2 id="h2_3">手动更新证书</h2>
+<p>在Terminal中运行以下命令来更新已有证书(*.ariesme.com). 过程中会要求更新域名TXT记录, 与原申请证书时的步骤一致.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">certbot-auto certonly --renew-by-default --manual --preferred-challenges dns-01 -d *.ariesme.com --server https://acme-v02.api.letsencrypt.org/directory
+</code></pre></div><h2 id="h2_4">优缺点</h2>
+<ol>
+<li>这样手动生成的证书可以给所有二级域名使用, 做到一次生成多次使用.</li>
+<li>由于是用_acme-challenge的DNS设置验证的域名所有权, 而且证书的有效期只有90天, 所以每次需要修改DNS来手动更新证书.</li>
+</ol>
+<h2 id="h2_5">更新历史</h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Detail</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>初版</td>
+<td>2019-06-08</td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>手动更新证书</td>
+<td>2019-10-08</td>
+</tr>
+</tbody>
+</table>
+        </div>
+  
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://github.com/liucent/blog/edit/master/content/posts/2019/generate_wildcard_ssl.md">
+                <i class="fas fa-code-branch"></i>
+                Improve This Page
+              </a>
+          </div>
+        
+  
+        
+      <hr />
+        <div class="row next-prev-navigator">
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+      <div class="col-md-6 previous-article">
+        <a href="/posts/2019/add_chinese_input_method_for_elementary_ibus/" class="btn btn-outline-info">
+          <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
+          <br />
+          <span>Elementary安装iBus中文输入法</span>
+        </a>
+      </div>
+      
+    
+    
+      
+        
+        
+          
+              
+          
+        
+        <div class="col-md-6 next-article">
+          <a href="/posts/2019/add_google_search_console_for_hugo/" class="btn btn-outline-info">
+            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+            <br />
+            <span>Hugo添加Google收录</span>
+          </a>
+        </div>
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+</div>
+
+      <hr />
+      
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#h2_1">安装Certbot工具</a></li>
+    <li><a href="#h2_2">申请通配符SSL证书</a></li>
+    <li><a href="#h2_3">手动更新证书</a></li>
+    <li><a href="#h2_4">优缺点</a></li>
+    <li><a href="#h2_5">更新历史</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    <footer class="container-fluid text-center align-content-center footer pb-2">
+  <div class="container pt-5">
+    <div class="row text-left">
+      <div class="col-md-4 col-sm-12">
+        <h5>Navigation</h5>
+        
+        <ul>
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#projects">Projects</a>
+            </li>
+            
+            
+            
+            
+            
+        </ul>
+        
+
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <h5>Contact Me</h5>
+        <ul>
+          
+          <li><span>Email: </span> <span>hi@ariesme.com</span></li>
+          
+        </ul>
+      </div>
+      
+      <div class="col-md-4 col-sm-12">
+        
+        <p>Stay up to date with email notification</p>
+        <form>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+          <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row text-left">
+      <div class="col-md-4">
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+          <img src="/assets/images/inverted-logo.png">
+          Toha
+        </a>
+      </div>
+      <div class="col-md-4 text-center">© 2020 Copyright.</div>
+      <div class="col-md-4 text-right">
+        <a id="hugo" href="https://gohugo.io/">Powered by Hugo
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+    
+    
+
+
+
+
+    <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/prism.min.js"></script>
+
+     <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-bash.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-java.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-toml.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-yaml.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-nginx.min.js"></script> 
+
+    
+        <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    
+
+
+
+<script src="/assets/js/single.js"></script>
+
+
+
+  </body>
+</html>

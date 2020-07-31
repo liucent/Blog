@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>google on AriesMe</title>
+    <link>http://www.ariesme.com/tags/google/</link>
+    <description>Recent content in google on AriesMe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.ariesme.com/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo添加Google收录</title>
+      <link>http://www.ariesme.com/posts/2019/add_google_search_console_for_hugo/</link>
+      <pubDate>Thu, 07 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/add_google_search_console_for_hugo/</guid>
+      <description>&lt;p&gt;把自己的Hugo Blog添加到Google收录中, 让其他人能通过Google搜索到你的Blog文章.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo添加Google Custom Search站内搜索</title>
+      <link>http://www.ariesme.com/posts/2019/add_google_custom_search_for_hugo/</link>
+      <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/add_google_custom_search_for_hugo/</guid>
+      <description>&lt;p&gt;Hugo没有自带站内搜索, 可以使用Google Custom Search Engine来代替.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo添加Google Analytics</title>
+      <link>http://www.ariesme.com/posts/2019/add_google_analytics_for_hugo/</link>
+      <pubDate>Sun, 24 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/add_google_analytics_for_hugo/</guid>
+      <description>&lt;p&gt;Hugo Blog添加Google Analytics&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

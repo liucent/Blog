@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2019 on AriesMe</title>
+    <link>http://www.ariesme.com/posts/2019/</link>
+    <description>Recent content in 2019 on AriesMe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.ariesme.com/posts/2019/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nginx配置多域名SSL证书</title>
+      <link>http://www.ariesme.com/posts/2019/several_domains_and_ssl_certificates_in_nginx/</link>
+      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/several_domains_and_ssl_certificates_in_nginx/</guid>
+      <description>&lt;p&gt;一直以来都只在nginx中使用过单域名以及单个SSL证书的配置. 前些天注册了个新域名并把新域名套上了cloudflare. 于是就想把新老域名都配置上同一个nginx站点, 也顺便对比下套与不套cloudflare的区别. 在网上搜索了下配置其实还是挺简单的, 只要找到原站点的配置文件并把原有的server配置再添加一个同样的并小修改下即可.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo添加文章目录toc</title>
+      <link>http://www.ariesme.com/posts/2019/add_toc_for_hugo/</link>
+      <pubDate>Wed, 30 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/add_toc_for_hugo/</guid>
+      <description>&lt;p&gt;这几天在原来hugo主题&lt;a href=&#34;https://github.com/calintat/minimal&#34;&gt;minimal&lt;/a&gt;的基础上尝试加了两个功能, 一个是站内搜索, 一个是文章目录(Table of Contents). 不过都是跟着其他主题修改过来的. 这次先写下文章目录toc的移植修改过程.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo动态加载prism.js</title>
+      <link>http://www.ariesme.com/posts/2019/add_prism_for_hugo_automatically/</link>
+      <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/add_prism_for_hugo_automatically/</guid>
+      <description>&lt;p&gt;以前&lt;a href=&#34;https://www.ariesme.com/post/2019/add_prism_for_hugo&#34;&gt;文章&lt;/a&gt;记录过怎样在Hugo中添加prism代码高亮的方法. 但是每次添加新的语言或者想换个主题就得重新去官网下载新的js和css文件, 比较繁琐. 所以今天介绍下利用&lt;a href=&#34;https://cdnjs.com/&#34;&gt;cdnjs&lt;/a&gt;来通过变量动态加载所需语言和主题的方法.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Elementary安装iBus中文输入法</title>
+      <link>http://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary_ibus/</link>
+      <pubDate>Sun, 14 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary_ibus/</guid>
+      <description>&lt;p&gt;前段时间记录了如何安装基于fcitx的输入法, 最近发现其实系统自带的有ibus中文输入法, 并且只需要简单的配置下就行了.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>手动生成SSL通配符证书</title>
+      <link>http://www.ariesme.com/posts/2019/generate_wildcard_ssl/</link>
+      <pubDate>Sat, 08 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/generate_wildcard_ssl/</guid>
+      <description>&lt;p&gt;以前一直使用的LNMP自动生成的证书, 也没在意生成的是不是通配符证书. 前段时间折腾私人网盘时, 竟然触发了Let&amp;rsquo;s Encrypt的申请证书次数限制. 遂来手动生成通配符SSL证书.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo添加Google收录</title>
+      <link>http://www.ariesme.com/posts/2019/add_google_search_console_for_hugo/</link>
+      <pubDate>Thu, 07 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/add_google_search_console_for_hugo/</guid>
+      <description>&lt;p&gt;把自己的Hugo Blog添加到Google收录中, 让其他人能通过Google搜索到你的Blog文章.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo添加Google Custom Search站内搜索</title>
+      <link>http://www.ariesme.com/posts/2019/add_google_custom_search_for_hugo/</link>
+      <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/add_google_custom_search_for_hugo/</guid>
+      <description>&lt;p&gt;Hugo没有自带站内搜索, 可以使用Google Custom Search Engine来代替.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo添加返回顶部按钮</title>
+      <link>http://www.ariesme.com/posts/2019/add_go_top_button_for_hugo/</link>
+      <pubDate>Fri, 01 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/add_go_top_button_for_hugo/</guid>
+      <description>&lt;p&gt;返回顶部按钮虽然看上去小巧，但确实是个很方便的功能. 读者阅读完一些较长文章后能快速返回页面顶部点选其他文章.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo添加Google Analytics</title>
+      <link>http://www.ariesme.com/posts/2019/add_google_analytics_for_hugo/</link>
+      <pubDate>Sun, 24 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/add_google_analytics_for_hugo/</guid>
+      <description>&lt;p&gt;Hugo Blog添加Google Analytics&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo添加Prism代码高亮</title>
+      <link>http://www.ariesme.com/posts/2019/add_prism_for_hugo/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/add_prism_for_hugo/</guid>
+      <description>&lt;p&gt;Hugo自带的Chroma代码高亮不是很方便, 还是请出Prism.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo添加归档页面</title>
+      <link>http://www.ariesme.com/posts/2019/add_archive_page_for_hugo/</link>
+      <pubDate>Tue, 19 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/add_archive_page_for_hugo/</guid>
+      <description>&lt;p&gt;Hugo默认并没有归档页面, 但可以单独添加一个归档页面.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Elementary安装fcitx中文输入法</title>
+      <link>http://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary_fcitx/</link>
+      <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary_fcitx/</guid>
+      <description>&lt;p&gt;网上的方法都是一次性安装fcitx和fcitx-pinyin然后才配置im-config, 这种办法一直没有成功. 正确的顺序是安装完fcitx之后就得设置im-config, 最后再安装fcitx-pinyin才能成功.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nginx强制http跳转https</title>
+      <link>http://www.ariesme.com/posts/2019/nginx_redirect_http_to_https/</link>
+      <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/nginx_redirect_http_to_https/</guid>
+      <description>&lt;p&gt;配置nginx强制http请求跳转到https, 同时也可以配置强制跳转www.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>AutoIt的窗口自动化测试</title>
+      <link>http://www.ariesme.com/posts/2019/autoit_windows_testcase/</link>
+      <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/autoit_windows_testcase/</guid>
+      <description>&lt;p&gt;Selenium自动化测试时会遇到需要调用Windows弹出窗口上传或下载文件的场景. 可以使用AutoIt工具实现.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>WordPress添加Prism代码高亮</title>
+      <link>http://www.ariesme.com/posts/2019/add_prism_for_wordpress/</link>
+      <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ariesme.com/posts/2019/add_prism_for_wordpress/</guid>
+      <description>&lt;p&gt;在WordPress中添加和配置Prism代码高亮插件.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

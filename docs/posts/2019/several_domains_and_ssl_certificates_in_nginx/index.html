@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nginx配置多域名SSL证书</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/main.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/navigators/navbar.css" />
+
+
+<link href="https://fonts.loli.net/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+
+
+<link rel="stylesheet" href="/assets/css/style.css" />
+
+    
+
+ <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/themes/prism-coy.min.css"> 
+ <link rel="stylesheet" href="https://ccdnjs.loli.net/ajax/libs/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.css"> 
+
+<link rel="stylesheet" href="/assets/css/single.css" />
+<link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
+
+
+    
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-134996642-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    <nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+    
+    
+    
+      
+    
+    
+      
+    
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="http://www.ariesme.com/">
+      <img src="/assets/images/main-logo.png">AriesMe</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      </ul>
+    </div>
+  </div>
+  
+  <img src="/assets/images/main-logo.png" class="d-none" id="main-logo">
+  <img src="/assets/images/inverted-logo.png" class="d-none" id="inverted-logo">
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/">2019</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2018/">2018</a></li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(http://www.ariesme.com/assets/images/default-hero.jpg);'>
+      </div>
+  
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/assets/images/default-avatar.png'/>
+          <h5 class="author-name">Vincent Liu</h5>
+          <p>November 23, 2019</p>
+        </div>
+  
+        <div class="title">
+          <h1>Nginx配置多域名SSL证书</h1>
+        </div>
+  
+        <div class="post-content" id="post-content">
+          <p>一直以来都只在nginx中使用过单域名以及单个SSL证书的配置. 前些天注册了个新域名并把新域名套上了cloudflare. 于是就想把新老域名都配置上同一个nginx站点, 也顺便对比下套与不套cloudflare的区别. 在网上搜索了下配置其实还是挺简单的, 只要找到原站点的配置文件并把原有的server配置再添加一个同样的并小修改下即可.</p>
+<h2 id="h2_1">原有站点配置文件</h2>
+<p>在nginx的配置文件路径下找到原有站点的配置文件(一般在该路径下/usr/local/nginx/conf/vhost/). 找到类似如下的server配置项.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span>
+    {
+        <span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">http2</span>;
+        <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:443</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">http2</span>;
+        <span style="color:#f92672">server_name</span> <span style="color:#e6db74">www.aaa.com</span> ;
+        <span style="color:#f92672">index</span> <span style="color:#e6db74">index.html</span> <span style="color:#e6db74">index.htm</span> <span style="color:#e6db74">index.php</span> <span style="color:#e6db74">default.html</span> <span style="color:#e6db74">default.htm</span> <span style="color:#e6db74">default.php</span>;
+        <span style="color:#f92672">root</span>  <span style="color:#e6db74">/home/wwwroot/www.aaa.com</span>;
+
+        <span style="color:#f92672">ssl_certificate</span> <span style="color:#e6db74">/etc/letsencrypt/live/www.aaa.com/fullchain.pem</span>;
+        <span style="color:#f92672">ssl_certificate_key</span> <span style="color:#e6db74">/etc/letsencrypt/live/www.aaa.com/privkey.pem</span>;
+        <span style="color:#75715e">#...
+</span><span style="color:#75715e"></span>    }
+</code></pre></div><h2 id="h2_2">添加新域名和证书</h2>
+<p>在上述server配置项下再添加一个相同的server配置项并把相应域名改称新域名, 证书路径也改成新域名证书的路径. server中的其他配置, 特别是root的配置千万不要修改.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span>
+    {
+        <span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">http2</span>;
+        <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:443</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">http2</span>;
+        <span style="color:#f92672">server_name</span> <span style="color:#e6db74">www.bbb.com</span>; <span style="color:#75715e">#更改成新域名
+</span><span style="color:#75715e"></span>        <span style="color:#f92672">index</span> <span style="color:#e6db74">index.html</span> <span style="color:#e6db74">index.htm</span> <span style="color:#e6db74">index.php</span> <span style="color:#e6db74">default.html</span> <span style="color:#e6db74">default.htm</span> <span style="color:#e6db74">default.php</span>;
+        <span style="color:#f92672">root</span>  <span style="color:#e6db74">/home/wwwroot/www.aaa.com</span>; <span style="color:#75715e">#不要修改
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">#更改成新域名证书的路径
+</span><span style="color:#75715e"></span>        <span style="color:#f92672">ssl_certificate</span> <span style="color:#e6db74">/etc/letsencrypt/live/www.bbb.com/fullchain.pem</span>;
+        <span style="color:#f92672">ssl_certificate_key</span> <span style="color:#e6db74">/etc/letsencrypt/live/www.bbb.com/privkey.pem</span>;
+        
+        <span style="color:#75715e">#...
+</span><span style="color:#75715e"></span>    }
+</code></pre></div><h2 id="h2_3">重启nginx</h2>
+<p>修改并保存站点配置文件后直接重启nginx, 然后通过新老域名都可以访问站点了. 另外如果套了cloudflare就需要在cloudflare上设置成full或者full(strict).</p>
+<h2 id="h2_4">更新历史</h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Detail</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>初版</td>
+<td>2019-11-23</td>
+</tr>
+</tbody>
+</table>
+        </div>
+  
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://github.com/liucent/blog/edit/master/content/posts/2019/several_domains_and_ssl_certificates_in_nginx.md">
+                <i class="fas fa-code-branch"></i>
+                Improve This Page
+              </a>
+          </div>
+        
+  
+        
+      <hr />
+        <div class="row next-prev-navigator">
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+      
+        
+        
+        <div class="col-md-12 next-article">
+          <a href="/posts/2019/add_toc_for_hugo/" class="btn btn-outline-info">
+            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+            <br />
+            <span>Hugo添加文章目录toc</span>
+          </a>
+        </div>
+      
+    
+  
+
+</div>
+
+      <hr />
+      
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#h2_1">原有站点配置文件</a></li>
+    <li><a href="#h2_2">添加新域名和证书</a></li>
+    <li><a href="#h2_3">重启nginx</a></li>
+    <li><a href="#h2_4">更新历史</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    <footer class="container-fluid text-center align-content-center footer pb-2">
+  <div class="container pt-5">
+    <div class="row text-left">
+      <div class="col-md-4 col-sm-12">
+        <h5>Navigation</h5>
+        
+        <ul>
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#projects">Projects</a>
+            </li>
+            
+            
+            
+            
+            
+        </ul>
+        
+
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <h5>Contact Me</h5>
+        <ul>
+          
+          <li><span>Email: </span> <span>hi@ariesme.com</span></li>
+          
+        </ul>
+      </div>
+      
+      <div class="col-md-4 col-sm-12">
+        
+        <p>Stay up to date with email notification</p>
+        <form>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+          <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row text-left">
+      <div class="col-md-4">
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+          <img src="/assets/images/inverted-logo.png">
+          Toha
+        </a>
+      </div>
+      <div class="col-md-4 text-center">© 2020 Copyright.</div>
+      <div class="col-md-4 text-right">
+        <a id="hugo" href="https://gohugo.io/">Powered by Hugo
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+    
+    
+
+
+
+
+    <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/prism.min.js"></script>
+
+     <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-bash.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-java.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-toml.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-yaml.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-nginx.min.js"></script> 
+
+    
+        <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    
+
+
+
+<script src="/assets/js/single.js"></script>
+
+
+
+  </body>
+</html>
