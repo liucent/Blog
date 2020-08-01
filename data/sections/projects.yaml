@@ -54,11 +54,20 @@ projects:
   summary: Personal Download Management.
   tags: ["website","ariang"]
   
+- name: Blog
+  #logo: images/projects/tensorflow.png
+  role: Builder
+  timeline: "July 2020 - Present"
+  repo: https://github.com/liucent/blog
+  #url: "https://pdm.ariesme.com"
+  summary: This blog source code.
+  tags: ["github","blog"]
+
 - name: ServerStatus
   #logo: images/projects/tensorflow.png
   role: Fork
   timeline: "March 2019 - Present"
   repo: https://github.com/liucent/ServerStatus
   #url: "https://pdm.ariesme.com"
-  summary: ServerStatus.
+  summary: New UI, location flag and service status. [Live demo](https://psp.ariesme.com).
   tags: ["github","serverstatus"]
