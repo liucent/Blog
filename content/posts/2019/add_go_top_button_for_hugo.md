@@ -6,6 +6,12 @@ tags:
   - "hugo"
 author:
   name: "Vincent Liu"
+menu:
+  sidebar:
+    name: Hugo添加返回顶部按钮
+    identifier: Hugo添加返回顶部按钮
+    parent: 2019
+    weight: -0301
 ---
 
 返回顶部按钮虽然看上去小巧，但确实是个很方便的功能. 读者阅读完一些较长文章后能快速返回页面顶部点选其他文章.

@@ -6,6 +6,12 @@ tags:
   - "wordpress"
 author:
   name: "Vincent Liu"
+menu:
+  sidebar:
+    name: WordPress关闭自动更新和版本控制
+    identifier: WordPress关闭自动更新和版本控制
+    parent: 2018
+    weight: -1217
 ---
 
 WordPress安装完成后,需要将不必要的自动更新和自动保存功能关闭.

@@ -7,6 +7,12 @@ tags:
   - "toc"
 author:
   name: "Vincent Liu"
+menu:
+  sidebar:
+    name: Hugo添加文章目录toc
+    identifier: Hugo添加文章目录toc
+    parent: 2019
+    weight: -1030
 ---
 
 这几天在原来hugo主题[minimal](https://github.com/calintat/minimal)的基础上尝试加了两个功能, 一个是站内搜索, 一个是文章目录(Table of Contents). 不过都是跟着其他主题修改过来的. 这次先写下文章目录toc的移植修改过程.

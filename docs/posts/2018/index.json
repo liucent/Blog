@@ -1,0 +1,19 @@
+[
+    {
+        "ref": "https://www.ariesme.com/posts/2018/wordpress_disable_update/",
+        "title": "WordPress关闭自动更新和版本控制",
+        "section": "posts",
+        "tags": ["wordpress"],
+        "date" : "2018.12.17",
+        "body": "WordPress安装完成后,需要将不必要的自动更新和自动保存功能关闭.\n关闭自动更新 wp-config.php 文件中添加如下代码.\n//Disable automatic update define(\u0026#39;AUTOMATIC_UPDATER_DISABLED\u0026#39;, true); 关闭自动更新提示 functions.php 文件中添加如下代码.\n//Disable automatic update notification add_filter(\u0026#39;pre_site_transient_update_core\u0026#39;,create_function(\u0026#39;$a\u0026#39;,\u0026#34;return null;\u0026#34;)); add_filter(\u0026#39;pre_site_transient_update_plugins\u0026#39;,create_function(\u0026#39;$a\u0026#39;,\u0026#34;return null;\u0026#34;)); add_filter(\u0026#39;pre_site_transient_update_themes\u0026#39;,create_function(\u0026#39;$a\u0026#39;,\u0026#34;return null;\u0026#34;)); remove_action(\u0026#39;admin_init\u0026#39;,\u0026#39;_maybe_update_core\u0026#39;); remove_action(\u0026#39;admin_init\u0026#39;,\u0026#39;_maybe_update_plugins\u0026#39;); remove_action(\u0026#39;admin_init\u0026#39;,\u0026#39;_maybe_update_themes\u0026#39;); 关闭文章自动保存 wp-config.php 文件中添加如下代码.\n//Disable revisions and autosave per day define(\u0026#39;WP_POST_REVISIONS\u0026#39;, false); define(\u0026#39;AUTOSAVE_INTERVAL\u0026#39;, 36000); "
+    }
+,
+    {
+        "ref": "https://www.ariesme.com/posts/2018/nginx_redirect_websocket/",
+        "title": "Nginx配置WebSocket跳转",
+        "section": "posts",
+        "tags": ["nginx"],
+        "date" : "2018.12.16",
+        "body": "Nginx转发WebSocket请求需要添加几个参数来升级http请求为WebSocket请求.\n在server中添加需要转发的location参数 文件路径:/usr/local/nginx/conf/vhost/www.cloudme.com.conf\nserver{ #listen  #ssl  location = /ray { proxy_redirect off; proxy_pass http://127.0.0.1:9090; proxy_http_version 1.1; proxy_set_header Upgrade $http_upgrade; proxy_set_header Connection \u0026#34;upgrade\u0026#34;; proxy_set_header Host $http_host; } } "
+    }
+]

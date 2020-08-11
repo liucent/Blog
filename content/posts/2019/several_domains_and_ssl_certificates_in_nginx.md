@@ -7,6 +7,12 @@ tags:
   - "ssl"
 author:
   name: "Vincent Liu"
+menu:
+  sidebar:
+    name: Nginx配置多域名SSL证书
+    identifier: Nginx配置多域名SSL证书
+    parent: 2019
+    weight: -1123
 ---
 
 一直以来都只在nginx中使用过单域名以及单个SSL证书的配置. 前些天注册了个新域名并把新域名套上了cloudflare. 于是就想把新老域名都配置上同一个nginx站点, 也顺便对比下套与不套cloudflare的区别. 在网上搜索了下配置其实还是挺简单的, 只要找到原站点的配置文件并把原有的server配置再添加一个同样的并小修改下即可.

@@ -25,7 +25,7 @@
     
 
  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/themes/prism-coy.min.css"> 
- <link rel="stylesheet" href="https://ccdnjs.loli.net/ajax/libs/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.css"> 
+
 
 <link rel="stylesheet" href="/assets/css/single.css" />
 <link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
@@ -89,6 +89,7 @@ if (!doNotTrack) {
     <div class="sidebar-holder">
       <div class="sidebar" id="sidebar">
         <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div id="search-result"></div>
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
             <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
@@ -98,9 +99,35 @@ if (!doNotTrack) {
   
   
   
+    
+    
+  
   
     
-    <li><a class="" href="/posts/2019/">2019</a></li>
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="/posts/2019/">2019</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/several_domains_and_ssl_certificates_in_nginx/">Nginx配置多域名SSL证书</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/2019/add_toc_for_hugo/">Hugo添加文章目录toc</a></li>
   
 
   
@@ -109,7 +136,145 @@ if (!doNotTrack) {
   
   
     
-    <li><a class="" href="/posts/2018/">2018</a></li>
+    <li><a class="" href="/posts/2019/add_prism_for_hugo_automatically/">Hugo动态加载prism.js</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/generate_wildcard_ssl/">手动生成SSL通配符证书</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_chinese_input_method_for_elementary/">Elementary安装中文输入法</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_archive_page_for_hugo/">Hugo添加归档页面</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_google_search_console_for_hugo/">Hugo添加Google收录</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_google_custom_search_for_hugo/">Hugo添加Google Custom Search站内搜索</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_go_top_button_for_hugo/">Hugo添加返回顶部按钮</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_google_analytics_for_hugo/">Hugo添加Google Analytics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_prism_for_hugo/">Hugo添加Prism代码高亮</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/autoit_windows_testcase/">AutoIt的窗口自动化测试</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_prism_for_wordpress/">WordPress添加Prism代码高亮</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/nginx_redirect_http_to_https/">Nginx强制http跳转https</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/2018/">2018</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2018/wordpress_disable_update/">WordPress关闭自动更新和版本控制</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2018/nginx_redirect_websocket/">Nginx配置WebSocket跳转</a></li>
+  
+
+
+      </ul>
+    </li>
   
 
 
@@ -349,8 +514,6 @@ if (!doNotTrack) {
   
 
   
-
-  
     
       
       <div class="col-md-6 previous-article">
@@ -527,10 +690,13 @@ if (!doNotTrack) {
      <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-bash.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-java.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-toml.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-yaml.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-nginx.min.js"></script> 
 
     
-        <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    
 
 
+
+
+<script src="https://cdnjs.loli.net/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+<script src="/assets/js/search.js"></script>
 
 <script src="/assets/js/single.js"></script>
 

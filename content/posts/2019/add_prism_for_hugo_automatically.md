@@ -7,6 +7,12 @@ tags:
   - "prism"
 author:
   name: "Vincent Liu"
+menu:
+  sidebar:
+    name: Hugo动态加载prism.js
+    identifier: Hugo动态加载prism.js
+    parent: 2019
+    weight: -1020
 ---
 
 以前[文章](https://www.ariesme.com/post/2019/add_prism_for_hugo)记录过怎样在Hugo中添加prism代码高亮的方法. 但是每次添加新的语言或者想换个主题就得重新去官网下载新的js和css文件, 比较繁琐. 所以今天介绍下利用[cdnjs](https://cdnjs.com/)来通过变量动态加载所需语言和主题的方法.

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Elementary安装iBus中文输入法</title>
+    <title>Elementary安装中文输入法</title>
     <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -25,7 +25,7 @@
     
 
  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/themes/prism-coy.min.css"> 
- <link rel="stylesheet" href="https://ccdnjs.loli.net/ajax/libs/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.css"> 
+
 
 <link rel="stylesheet" href="/assets/css/single.css" />
 <link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
@@ -89,6 +89,7 @@ if (!doNotTrack) {
     <div class="sidebar-holder">
       <div class="sidebar" id="sidebar">
         <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div id="search-result"></div>
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
             <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
@@ -98,9 +99,23 @@ if (!doNotTrack) {
   
   
   
+    
+    
+  
   
     
-    <li><a class="" href="/posts/2019/">2019</a></li>
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="/posts/2019/">2019</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/several_domains_and_ssl_certificates_in_nginx/">Nginx配置多域名SSL证书</a></li>
   
 
   
@@ -109,7 +124,157 @@ if (!doNotTrack) {
   
   
     
-    <li><a class="" href="/posts/2018/">2018</a></li>
+    <li><a class="" href="/posts/2019/add_toc_for_hugo/">Hugo添加文章目录toc</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_prism_for_hugo_automatically/">Hugo动态加载prism.js</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/generate_wildcard_ssl/">手动生成SSL通配符证书</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/2019/add_chinese_input_method_for_elementary/">Elementary安装中文输入法</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_archive_page_for_hugo/">Hugo添加归档页面</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_google_search_console_for_hugo/">Hugo添加Google收录</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_google_custom_search_for_hugo/">Hugo添加Google Custom Search站内搜索</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_go_top_button_for_hugo/">Hugo添加返回顶部按钮</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_google_analytics_for_hugo/">Hugo添加Google Analytics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_prism_for_hugo/">Hugo添加Prism代码高亮</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/autoit_windows_testcase/">AutoIt的窗口自动化测试</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_prism_for_wordpress/">WordPress添加Prism代码高亮</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/nginx_redirect_http_to_https/">Nginx强制http跳转https</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/2018/">2018</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2018/wordpress_disable_update/">WordPress关闭自动更新和版本控制</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2018/nginx_redirect_websocket/">Nginx配置WebSocket跳转</a></li>
+  
+
+
+      </ul>
+    </li>
   
 
 
@@ -139,25 +304,38 @@ if (!doNotTrack) {
         </div>
   
         <div class="title">
-          <h1>Elementary安装iBus中文输入法</h1>
+          <h1>Elementary安装中文输入法</h1>
         </div>
   
         <div class="post-content" id="post-content">
-          <p>前段时间记录了如何安装基于fcitx的输入法, 最近发现其实系统自带的有ibus中文输入法, 并且只需要简单的配置下就行了.</p>
-<h2 id="h2_1">添加中文输入法</h2>
+          <p>前段时间安装基于fcitx的输入法, 最近发现其实系统自带的有ibus中文输入法, 现在统一记录下配置两种输入法的方法.</p>
+<h2 id="h2_1">1. 配置ibus输入法</h2>
+<h3 id="h3_1_1">1.1. 添加中文输入法</h3>
 <p>在Applications中打开System Settings, 依次进入Language&amp;Region-&gt;Keyboard Settings-&gt;Input Method Settings-&gt;Input Method页面. 点击Add按钮, 选择Chinese-&gt;Intelligent Pinyin. 添加成功后, 点击Save按钮退出.
 PS: 第一次进入可能会提示iBus未启动, 点击Yes启动iBus就行了.</p>
-<h2 id="h2_2">设置iBus为默认输入法</h2>
+<h3 id="h3_1_2">1.2. 设置iBus为默认输入法</h3>
 <p>Terminal中运行如下命令, 在弹出的窗口点击两次Yes后选择iBus并保存.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo im-config
-</code></pre></div><h2 id="h2_3">重启机器</h2>
+</code></pre></div><h3 id="h3_1_3">1.3. 重启机器</h3>
 <p>重启完后, 默认就是中文输入法了, 点击shift可在中英文输入法之间切换, 也可以ctrl+space切换到别的输入法.</p>
+<h2 id="h2_2">2. 配置fcitx输入法</h2>
+<h3 id="h3_2_1">2.1. 安装fcitx</h3>
+<p>打开Terminal并运行如下命令.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install fcitx
+</code></pre></div><h3 id="h3_2_2">2.2. 设置fcitx为默认输入法</h3>
+<p>Terminal中运行如下命令, 在弹出的窗口点击两次Yes后选择fcitx并保存.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo im-config
+</code></pre></div><h3 id="h3_2_3">2.3. 安装fcitx-pinyin</h3>
+<p>Terminal中运行如下命令.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install fcitx-pinyin
+</code></pre></div><h3 id="h3_2_4">2.4. 重启机器</h3>
+<p>重启完后, ctrl+space可切换到fictx输入法, 后续点击shift可在中英文输入法之间切换.</p>
         </div>
   
         
         
           <div class="btn-improve-page">
-              <a href="https://github.com/liucent/blog/edit/master/content/posts/2019/add_chinese_input_method_for_elementary_ibus.md">
+              <a href="https://github.com/liucent/blog/edit/master/content/posts/2019/add_chinese_input_method_for_elementary.md">
                 <i class="fas fa-code-branch"></i>
                 Improve This Page
               </a>
@@ -168,8 +346,6 @@ PS: 第一次进入可能会提示iBus未启动, 点击Yes启动iBus就行了.</
       <hr />
         <div class="row next-prev-navigator">
 
-
-  
 
   
 
@@ -253,9 +429,21 @@ PS: 第一次进入可能会提示iBus未启动, 点击Yes启动iBus就行了.</
       <div class="toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#h2_1">添加中文输入法</a></li>
-    <li><a href="#h2_2">设置iBus为默认输入法</a></li>
-    <li><a href="#h2_3">重启机器</a></li>
+    <li><a href="#h2_1">1. 配置ibus输入法</a>
+      <ul>
+        <li><a href="#h3_1_1">1.1. 添加中文输入法</a></li>
+        <li><a href="#h3_1_2">1.2. 设置iBus为默认输入法</a></li>
+        <li><a href="#h3_1_3">1.3. 重启机器</a></li>
+      </ul>
+    </li>
+    <li><a href="#h2_2">2. 配置fcitx输入法</a>
+      <ul>
+        <li><a href="#h3_2_1">2.1. 安装fcitx</a></li>
+        <li><a href="#h3_2_2">2.2. 设置fcitx为默认输入法</a></li>
+        <li><a href="#h3_2_3">2.3. 安装fcitx-pinyin</a></li>
+        <li><a href="#h3_2_4">2.4. 重启机器</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -362,10 +550,13 @@ PS: 第一次进入可能会提示iBus未启动, 点击Yes启动iBus就行了.</
      <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-bash.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-java.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-toml.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-yaml.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-nginx.min.js"></script> 
 
     
-        <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    
 
 
+
+
+<script src="https://cdnjs.loli.net/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+<script src="/assets/js/search.js"></script>
 
 <script src="/assets/js/single.js"></script>
 

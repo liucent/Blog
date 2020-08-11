@@ -1,12 +1,18 @@
 ---
 title: "AutoIt的窗口自动化测试"
 description: ""
-date: "2019-01-15"
+date: "2019-01-16"
 tags:
   - "autoit"
   - "selenium"
 author:
   name: "Vincent Liu"
+menu:
+  sidebar:
+    name: AutoIt的窗口自动化测试
+    identifier: AutoIt的窗口自动化测试
+    parent: 2019
+    weight: -0116
 ---
 
 Selenium自动化测试时会遇到需要调用Windows弹出窗口上传或下载文件的场景. 可以使用AutoIt工具实现.

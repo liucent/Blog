@@ -6,6 +6,12 @@ tags:
   - "hugo"
 author:
   name: "Vincent Liu"
+menu:
+  sidebar:
+    name: Hugo添加归档页面
+    identifier: Hugo添加归档页面
+    parent: 2019
+    weight: -0219
 ---
 
 Hugo默认并没有归档页面, 但可以单独添加一个归档页面.

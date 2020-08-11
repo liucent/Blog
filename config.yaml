@@ -22,6 +22,10 @@ googleAnalytics: UA-134996642-1
 # Enable global emoji support
 enableEmoji: true
 
+# Export html and json files
+outputs:
+  section: ["html", "json"]
+
 # Custom parameters
 params:
   # copyright
@@ -75,4 +79,4 @@ params:
   prism: true
   prismStyle: "coy" # theme: okaidia, coy, solarizedlight...
   prismLanguages: ["bash", "java", "toml", "yaml", "nginx"]
-  prismLineNumbers: true
+  prismLineNumbers: false

@@ -68,7 +68,12 @@
   </url>
   
   <url>
-    <loc>https://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary_ibus/</loc>
+    <loc>https://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary/</loc>
+    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ariesme.com/tags/fcitx/</loc>
     <lastmod>2019-07-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -123,33 +128,18 @@
   </url>
   
   <url>
-    <loc>https://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary_fcitx/</loc>
-    <lastmod>2019-02-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.ariesme.com/tags/fcitx/</loc>
-    <lastmod>2019-02-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.ariesme.com/posts/2019/nginx_redirect_http_to_https/</loc>
+    <loc>https://www.ariesme.com/tags/autoit/</loc>
     <lastmod>2019-01-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.ariesme.com/tags/autoit/</loc>
-    <lastmod>2019-01-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.ariesme.com/posts/2019/autoit_windows_testcase/</loc>
-    <lastmod>2019-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.ariesme.com/tags/selenium/</loc>
-    <lastmod>2019-01-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -160,6 +150,11 @@
   <url>
     <loc>https://www.ariesme.com/posts/2019/add_prism_for_wordpress/</loc>
     <lastmod>2019-01-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ariesme.com/posts/2019/nginx_redirect_http_to_https/</loc>
+    <lastmod>2019-01-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>

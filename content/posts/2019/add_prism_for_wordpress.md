@@ -7,6 +7,12 @@ tags:
   - "prism"
 author:
   name: "Vincent Liu"
+menu:
+  sidebar:
+    name: WordPress添加Prism代码高亮
+    identifier: WordPress添加Prism代码高亮
+    parent: 2019
+    weight: -0115
 ---
 
 在WordPress中添加和配置Prism代码高亮插件.

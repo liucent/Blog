@@ -7,6 +7,12 @@ tags:
   - "google"
 author:
   name: "Vincent Liu"
+menu:
+  sidebar:
+    name: Hugo添加Google Custom Search站内搜索
+    identifier: Hugo添加Google Custom Search站内搜索
+    parent: 2019
+    weight: -0302
 ---
 
 Hugo没有自带站内搜索, 可以使用Google Custom Search Engine来代替.

@@ -7,6 +7,12 @@ tags:
   - "google"
 author:
   name: "Vincent Liu"
+menu:
+  sidebar:
+    name: Hugo添加Google Analytics
+    identifier: Hugo添加Google Analytics
+    parent: 2019
+    weight: -0224
 ---
 
 Hugo Blog添加Google Analytics

@@ -6,6 +6,12 @@ tags:
   - "nginx"
 author:
   name: "Vincent Liu"
+menu:
+  sidebar:
+    name: Nginx配置WebSocket跳转
+    identifier: Nginx配置WebSocket跳转
+    parent: 2018
+    weight: -1216
 ---
 
 Nginx转发WebSocket请求需要添加几个参数来升级http请求为WebSocket请求.

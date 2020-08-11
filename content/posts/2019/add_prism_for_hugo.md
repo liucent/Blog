@@ -7,6 +7,12 @@ tags:
   - "prism"
 author:
   name: "Vincent Liu"
+menu:
+  sidebar:
+    name: Hugo添加Prism代码高亮
+    identifier: Hugo添加Prism代码高亮
+    parent: 2019
+    weight: -0222
 ---
 
 Hugo自带的Chroma代码高亮不是很方便, 还是请出Prism.

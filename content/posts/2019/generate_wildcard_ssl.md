@@ -6,6 +6,12 @@ tags:
   - "ssl"
 author:
   name: "Vincent Liu"
+menu:
+  sidebar:
+    name: 手动生成SSL通配符证书
+    identifier: 手动生成SSL通配符证书
+    parent: 2019
+    weight: -0618
 ---
 
 以前一直使用的LNMP自动生成的证书, 也没在意生成的是不是通配符证书. 前段时间折腾私人网盘时, 竟然触发了Let's Encrypt的申请证书次数限制. 遂来手动生成通配符SSL证书.

@@ -23,7 +23,7 @@
     <item>
       <title>Nginx强制http跳转https</title>
       <link>https://www.ariesme.com/posts/2019/nginx_redirect_http_to_https/</link>
-      <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 13 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.ariesme.com/posts/2019/nginx_redirect_http_to_https/</guid>
       <description>&lt;p&gt;配置nginx强制http请求跳转到https, 同时也可以配置强制跳转www.&lt;/p&gt;</description>

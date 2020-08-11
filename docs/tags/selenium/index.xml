@@ -6,7 +6,7 @@
     <description>Recent content in selenium on AriesMe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.ariesme.com/tags/selenium/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>AutoIt的窗口自动化测试</title>
       <link>https://www.ariesme.com/posts/2019/autoit_windows_testcase/</link>
-      <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.ariesme.com/posts/2019/autoit_windows_testcase/</guid>
       <description>&lt;p&gt;Selenium自动化测试时会遇到需要调用Windows弹出窗口上传或下载文件的场景. 可以使用AutoIt工具实现.&lt;/p&gt;</description>

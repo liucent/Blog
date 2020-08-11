@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Elementary安装iBus中文输入法</title>
-      <link>https://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary_ibus/</link>
+      <title>Elementary安装中文输入法</title>
+      <link>https://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary/</link>
       <pubDate>Sun, 14 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary_ibus/</guid>
-      <description>&lt;p&gt;前段时间记录了如何安装基于fcitx的输入法, 最近发现其实系统自带的有ibus中文输入法, 并且只需要简单的配置下就行了.&lt;/p&gt;</description>
+      <guid>https://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary/</guid>
+      <description>&lt;p&gt;前段时间安装基于fcitx的输入法, 最近发现其实系统自带的有ibus中文输入法, 现在统一记录下配置两种输入法的方法.&lt;/p&gt;</description>
     </item>
     
   </channel>

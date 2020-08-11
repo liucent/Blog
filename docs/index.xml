@@ -39,12 +39,12 @@
     </item>
     
     <item>
-      <title>Elementary安装iBus中文输入法</title>
-      <link>https://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary_ibus/</link>
+      <title>Elementary安装中文输入法</title>
+      <link>https://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary/</link>
       <pubDate>Sun, 14 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary_ibus/</guid>
-      <description>&lt;p&gt;前段时间记录了如何安装基于fcitx的输入法, 最近发现其实系统自带的有ibus中文输入法, 并且只需要简单的配置下就行了.&lt;/p&gt;</description>
+      <guid>https://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary/</guid>
+      <description>&lt;p&gt;前段时间安装基于fcitx的输入法, 最近发现其实系统自带的有ibus中文输入法, 现在统一记录下配置两种输入法的方法.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -111,27 +111,9 @@
     </item>
     
     <item>
-      <title>Elementary安装fcitx中文输入法</title>
-      <link>https://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary_fcitx/</link>
-      <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.ariesme.com/posts/2019/add_chinese_input_method_for_elementary_fcitx/</guid>
-      <description>&lt;p&gt;网上的方法都是一次性安装fcitx和fcitx-pinyin然后才配置im-config, 这种办法一直没有成功. 正确的顺序是安装完fcitx之后就得设置im-config, 最后再安装fcitx-pinyin才能成功.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Nginx强制http跳转https</title>
-      <link>https://www.ariesme.com/posts/2019/nginx_redirect_http_to_https/</link>
-      <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.ariesme.com/posts/2019/nginx_redirect_http_to_https/</guid>
-      <description>&lt;p&gt;配置nginx强制http请求跳转到https, 同时也可以配置强制跳转www.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>AutoIt的窗口自动化测试</title>
       <link>https://www.ariesme.com/posts/2019/autoit_windows_testcase/</link>
-      <pubDate>Tue, 15 Jan 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.ariesme.com/posts/2019/autoit_windows_testcase/</guid>
       <description>&lt;p&gt;Selenium自动化测试时会遇到需要调用Windows弹出窗口上传或下载文件的场景. 可以使用AutoIt工具实现.&lt;/p&gt;</description>
@@ -144,6 +126,15 @@
       
       <guid>https://www.ariesme.com/posts/2019/add_prism_for_wordpress/</guid>
       <description>&lt;p&gt;在WordPress中添加和配置Prism代码高亮插件.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nginx强制http跳转https</title>
+      <link>https://www.ariesme.com/posts/2019/nginx_redirect_http_to_https/</link>
+      <pubDate>Sun, 13 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ariesme.com/posts/2019/nginx_redirect_http_to_https/</guid>
+      <description>&lt;p&gt;配置nginx强制http请求跳转到https, 同时也可以配置强制跳转www.&lt;/p&gt;</description>
     </item>
     
     <item>

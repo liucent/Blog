@@ -7,6 +7,12 @@ tags:
   - "google"
 author:
   name: "Vincent Liu"
+menu:
+  sidebar:
+    name: Hugo添加Google收录
+    identifier: Hugo添加Google收录
+    parent: 2019
+    weight: -0307
 ---
 
 把自己的Hugo Blog添加到Google收录中, 让其他人能通过Google搜索到你的Blog文章.

@@ -1,11 +1,17 @@
 ---
 title: "Nginx强制http跳转https"
 description: ""
-date: "2019-01-16"
+date: "2019-01-13"
 tags:
   - "nginx"
 author:
   name: "Vincent Liu"
+menu:
+  sidebar:
+    name: Nginx强制http跳转https
+    identifier: Nginx强制http跳转https
+    parent: 2019
+    weight: -0113
 ---
 
 配置nginx强制http请求跳转到https, 同时也可以配置强制跳转www.
