@@ -22,7 +22,7 @@ Hugo Blog添加Google Analytics
 1. 打开[Google Analytics官网](https://analytics.google.com/analytics/web/)注册账户并添加自己的网站域名
 2. 打开Google Analytics主页->Admin->Property->Tracking Info->Tracking Code并获取对应域名的Tracking Code
 
-## 设置googleAnalytics参数 {#h2_2}
+## 设置GoogleAnalytics参数 {#h2_2}
 在config.toml中新建googleAnalytics参数并设置成自己的Tracking Code
 
 ```toml

@@ -100,18 +100,18 @@ const search = (query) => {
  * Setup UI for Search
  */
 const initUI = () => {
-	// Clear sidebar tree when search box is active
-	$(document).click((e) => {
-		if($(e.target).closest('#search-box,#search-result,#search-result-page,#search-result-title,#search-result-body').length == 0){
-			$('.sidebar-tree').show()
-			$('#search-box').val('')
-			$('#search-box').trigger('keyup')
-		}
-	})
-	$('#search-box').focus(() => {
-		$('.sidebar-tree').hide()
-	})
-	
+    // Clear sidebar tree when search box is active
+    $(document).click((e) => {
+        if($(e.target).closest('#search-box,#search-result,#search-result-page,#search-result-title,#search-result-body').length == 0){
+            $('.sidebar-tree').show()
+            $('#search-box').val('')
+            $('#search-box').trigger('keyup')
+        }
+    })
+    $('#search-box').focus(() => {
+        $('.sidebar-tree').hide()
+    })
+
     // Event when changing query
     $('#search-box').keyup(event => {
         const $searchResults = $('#search-result')

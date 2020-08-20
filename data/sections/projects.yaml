@@ -19,7 +19,7 @@ buttons:
 # your projects
 projects:
 - name: Personal Server Probe
-  #logo: images/projects/kubernetes.png
+  logo: images/projects/website.png
   role: Builder
   timeline: "March 2019 - Present"
   #repo: https://github.com/kubernetes/kubernetes # If your project is a public repo on GitHub, then provide this link. it will show star count.
@@ -28,7 +28,7 @@ projects:
   tags: ["website","serverstatus"]
 
 - name: Personal Server Connection
-  #logo: images/projects/tensorflow.png
+  logo: images/projects/website.png
   role: Builder
   timeline: "March 2019 - Present"
   #repo: https://github.com/tensorflow/tensorflow
@@ -37,7 +37,7 @@ projects:
   tags: ["website","guacamole"]
 
 - name: Personal Cloud Drive
-  #logo: images/projects/tensorflow.png
+  logo: images/projects/website.png
   role: Builder
   timeline: "March 2019 - Present"
   #repo: https://github.com/tensorflow/tensorflow
@@ -46,28 +46,37 @@ projects:
   tags: ["website","filerun"]
 
 - name: Personal Download Management
-  #logo: images/projects/tensorflow.png
+  logo: images/projects/website.png
   role: Builder
   timeline: "March 2019 - Present"
   #repo: https://github.com/tensorflow/tensorflow
   url: "https://pdm.ariesme.com"
   summary: Personal Download Management.
   tags: ["website","ariang"]
+
+- name: Code Server IDE
+  logo: images/projects/website.png
+  role: Builder
+  timeline: "August 2020 - Present"
+  #repo: https://github.com/tensorflow/tensorflow
+  url: "https://ide.ariesme.com"
+  summary: IDE with Code-Server. [IDE Demo](https://ide.ariesme.com). [Web Demo](https://web.ariesme.com).
+  tags: ["website","code-server"]
   
 - name: Blog
-  #logo: images/projects/tensorflow.png
+  logo: images/projects/github.png
   role: Builder
   timeline: "July 2020 - Present"
   repo: https://github.com/liucent/blog
   #url: "https://pdm.ariesme.com"
-  summary: This blog source code.
+  summary: Blog source code.
   tags: ["github","blog"]
 
 - name: ServerStatus
-  #logo: images/projects/tensorflow.png
+  logo: images/projects/github.png
   role: Fork
   timeline: "March 2019 - Present"
   repo: https://github.com/liucent/ServerStatus
   #url: "https://pdm.ariesme.com"
-  summary: New UI, location flag and service status. [Live demo](https://psp.ariesme.com).
+  summary: New UI, location flag and service status. [Live Demo](https://psp.ariesme.com).
   tags: ["github","serverstatus"]

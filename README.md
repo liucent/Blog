@@ -1,1 +1,1 @@
-# blog
+# Blog with Hugo
