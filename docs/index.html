@@ -82,6 +82,7 @@ if (!doNotTrack) {
               </li>
             
             
+            
               <li class="nav-item">
                 <a class="nav-link" href="#projects">Projects</a>
               </li>
@@ -89,8 +90,11 @@ if (!doNotTrack) {
             
             
             
-            
         
+        
+          
+            
+          
         
         
           <div class="dropdown-divider" id="top-navbar-divider"></div>
@@ -100,6 +104,10 @@ if (!doNotTrack) {
             <a class="nav-link" id="blog-link" href="/posts">Posts</a>
           </li>
         
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.ariesme.com/notes/">Notes</a>
+          </li>
         
       </ul>
     </div>
@@ -154,6 +162,27 @@ if (!doNotTrack) {
     <div class="row" id="recent-post-cards">
       
         <div class="col-lg-4 col-md-6 pt-2 post-card">
+  <a href="/posts/2020/guacamole_deployment/" class="post-card-link">
+    <div class="card">
+      <div class="card-head">
+        <img class="card-img-top" src='/assets/images/default-hero.jpg'
+          alt="Card image cap"
+        />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Guacamole安装部署</h5>
+        <p class="card-text post-summary"> <p>Guacamole是一个开源的web应用, 可以通过浏览器远程访问各种主机, 支持SSH, RDP, TELNET等各种协议. 用来SSH登录多台VPS很是方便.</p></p>
+      </div>
+      <div class="card-footer">
+        <span class="float-left">August 24, 2020</span>
+        <a href="/posts/2020/guacamole_deployment/" class="float-right btn btn-outline-info btn-sm">Read</a>
+      </div>
+    </div>
+  </a>
+</div>
+
+      
+        <div class="col-lg-4 col-md-6 pt-2 post-card">
   <a href="/posts/2019/several_domains_and_ssl_certificates_in_nginx/" class="post-card-link">
     <div class="card">
       <div class="card-head">
@@ -195,27 +224,6 @@ if (!doNotTrack) {
 </div>
 
       
-        <div class="col-lg-4 col-md-6 pt-2 post-card">
-  <a href="/posts/2019/add_prism_for_hugo_automatically/" class="post-card-link">
-    <div class="card">
-      <div class="card-head">
-        <img class="card-img-top" src='/assets/images/default-hero.jpg'
-          alt="Card image cap"
-        />
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Hugo动态加载prism.js</h5>
-        <p class="card-text post-summary"> <p>以前<a href="https://www.ariesme.com/post/2019/add_prism_for_hugo">文章</a>记录过怎样在Hugo中添加prism代码高亮的方法. 但是每次添加新的语言或者想换个主题就得重新去官网下载新的js和css文件, 比较繁琐. 所以今天介绍下利用<a href="https://cdnjs.com/">cdnjs</a>来通过变量动态加载所需语言和主题的方法.</p></p>
-      </div>
-      <div class="card-footer">
-        <span class="float-left">October 20, 2019</span>
-        <a href="/posts/2019/add_prism_for_hugo_automatically/" class="float-right btn btn-outline-info btn-sm">Read</a>
-      </div>
-    </div>
-  </a>
-</div>
-
-      
     </div>
   </div>
 </div>
@@ -225,8 +233,6 @@ if (!doNotTrack) {
           
             
           
-        
-      
         
       
         
@@ -276,7 +282,7 @@ if (!doNotTrack) {
         </div>
       </a>
       <div class="card-body text-justify pt-1 pb-1">
-        <p>Personal Server Probe.</p>
+        <p>Live Demo with ServerStatus.</p>
         <span class="float-right">
           
           <a
@@ -284,198 +290,6 @@ if (!doNotTrack) {
             href="https://psp.ariesme.com"
             target="#"
             >Details</a
-          >
-          
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-
-      
-        <div
-  class="col-sm-12 col-md-6 col-lg-4 p-2 filtr-item"
-  data-category='all, website,guacamole'
->
-  <div class="card mt-1">
-    <div class="card">
-      <a class="card-header" href="https://psc.ariesme.com">
-        <div>
-          <div class="d-flex">
-            
-            <img class="card-img-xs" src="images/projects/website.png" alt="Personal Server Connection" />
-            
-            <h5 class="card-title mb-0">Personal Server Connection</h5>
-          </div>
-          <div class="sub-title">
-            <span>Builder</span>
-            <span>March 2019 - Present</span>
-          </div>
-        </div>
-      </a>
-      <div class="card-body text-justify pt-1 pb-1">
-        <p>Personal Server Connection.</p>
-        <span class="float-right">
-          
-          <a
-            class="btn btn-outline-info btn-sm mb-2"
-            href="https://psc.ariesme.com"
-            target="#"
-            >Details</a
-          >
-          
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-
-      
-        <div
-  class="col-sm-12 col-md-6 col-lg-4 p-2 filtr-item"
-  data-category='all, website,filerun'
->
-  <div class="card mt-1">
-    <div class="card">
-      <a class="card-header" href="https://pcd.ariesme.com">
-        <div>
-          <div class="d-flex">
-            
-            <img class="card-img-xs" src="images/projects/website.png" alt="Personal Cloud Drive" />
-            
-            <h5 class="card-title mb-0">Personal Cloud Drive</h5>
-          </div>
-          <div class="sub-title">
-            <span>Builder</span>
-            <span>March 2019 - Present</span>
-          </div>
-        </div>
-      </a>
-      <div class="card-body text-justify pt-1 pb-1">
-        <p>Personal Cloud Drive.</p>
-        <span class="float-right">
-          
-          <a
-            class="btn btn-outline-info btn-sm mb-2"
-            href="https://pcd.ariesme.com"
-            target="#"
-            >Details</a
-          >
-          
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-
-      
-        <div
-  class="col-sm-12 col-md-6 col-lg-4 p-2 filtr-item"
-  data-category='all, website,ariang'
->
-  <div class="card mt-1">
-    <div class="card">
-      <a class="card-header" href="https://pdm.ariesme.com">
-        <div>
-          <div class="d-flex">
-            
-            <img class="card-img-xs" src="images/projects/website.png" alt="Personal Download Management" />
-            
-            <h5 class="card-title mb-0">Personal Download Management</h5>
-          </div>
-          <div class="sub-title">
-            <span>Builder</span>
-            <span>March 2019 - Present</span>
-          </div>
-        </div>
-      </a>
-      <div class="card-body text-justify pt-1 pb-1">
-        <p>Personal Download Management.</p>
-        <span class="float-right">
-          
-          <a
-            class="btn btn-outline-info btn-sm mb-2"
-            href="https://pdm.ariesme.com"
-            target="#"
-            >Details</a
-          >
-          
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-
-      
-        <div
-  class="col-sm-12 col-md-6 col-lg-4 p-2 filtr-item"
-  data-category='all, website,code-server'
->
-  <div class="card mt-1">
-    <div class="card">
-      <a class="card-header" href="https://ide.ariesme.com">
-        <div>
-          <div class="d-flex">
-            
-            <img class="card-img-xs" src="images/projects/website.png" alt="Code Server IDE" />
-            
-            <h5 class="card-title mb-0">Code Server IDE</h5>
-          </div>
-          <div class="sub-title">
-            <span>Builder</span>
-            <span>August 2020 - Present</span>
-          </div>
-        </div>
-      </a>
-      <div class="card-body text-justify pt-1 pb-1">
-        <p>IDE with Code-Server. <a href="https://ide.ariesme.com">IDE Demo</a>. <a href="https://web.ariesme.com">Web Demo</a>.</p>
-        <span class="float-right">
-          
-          <a
-            class="btn btn-outline-info btn-sm mb-2"
-            href="https://ide.ariesme.com"
-            target="#"
-            >Details</a
-          >
-          
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-
-      
-        <div
-  class="col-sm-12 col-md-6 col-lg-4 p-2 filtr-item"
-  data-category='all, github,blog'
->
-  <div class="card mt-1">
-    <div class="card">
-      <a class="card-header" href="https://github.com/liucent/blog">
-        <div>
-          <div class="d-flex">
-            
-            <img class="card-img-xs" src="images/projects/github.png" alt="Blog" />
-            
-            <h5 class="card-title mb-0">Blog</h5>
-          </div>
-          <div class="sub-title">
-            <span>Builder</span>
-            <span>July 2020 - Present</span>
-          </div>
-        </div>
-      </a>
-      <div class="card-body text-justify pt-1 pb-1">
-        <p>Blog source code.</p>
-        <span class="float-right">
-          
-          <a
-            class="github-button-inactive"
-            href="https://github.com/liucent/blog"
-            data-icon="octicon-standard"
-            data-show-count="true"
-            aria-label="Star Blog"
-            >Star</a
           >
           
         </span>
@@ -506,7 +320,7 @@ if (!doNotTrack) {
         </div>
       </a>
       <div class="card-body text-justify pt-1 pb-1">
-        <p>New UI, location flag and service status. <a href="https://psp.ariesme.com">Live Demo</a>.</p>
+        <p>New UI, location flag and service status.</p>
         <span class="float-right">
           
           <a
@@ -515,6 +329,46 @@ if (!doNotTrack) {
             data-icon="octicon-standard"
             data-show-count="true"
             aria-label="Star ServerStatus"
+            >Star</a
+          >
+          
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+        <div
+  class="col-sm-12 col-md-6 col-lg-4 p-2 filtr-item"
+  data-category='all, github,blog'
+>
+  <div class="card mt-1">
+    <div class="card">
+      <a class="card-header" href="https://github.com/liucent/blog">
+        <div>
+          <div class="d-flex">
+            
+            <img class="card-img-xs" src="images/projects/github.png" alt="Blog" />
+            
+            <h5 class="card-title mb-0">Blog</h5>
+          </div>
+          <div class="sub-title">
+            <span>Builder</span>
+            <span>July 2020 - Present</span>
+          </div>
+        </div>
+      </a>
+      <div class="card-body text-justify pt-1 pb-1">
+        <p>This Hugo blog source code.</p>
+        <span class="float-right">
+          
+          <a
+            class="github-button-inactive"
+            href="https://github.com/liucent/blog"
+            data-icon="octicon-standard"
+            data-show-count="true"
+            aria-label="Star Blog"
             >Star</a
           >
           
@@ -534,6 +388,8 @@ if (!doNotTrack) {
           
             
           
+        
+      
         
       
         

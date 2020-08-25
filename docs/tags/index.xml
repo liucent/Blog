@@ -6,10 +6,46 @@
     <description>Recent content in Tags on AriesMe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.ariesme.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>guacamole</title>
+      <link>https://www.ariesme.com/tags/guacamole/</link>
+      <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ariesme.com/tags/guacamole/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rdp</title>
+      <link>https://www.ariesme.com/tags/rdp/</link>
+      <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ariesme.com/tags/rdp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://www.ariesme.com/tags/ssh/</link>
+      <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ariesme.com/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>telnet</title>
+      <link>https://www.ariesme.com/tags/telnet/</link>
+      <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ariesme.com/tags/telnet/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>nginx</title>

@@ -3,12 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.ariesme.com/posts/2019/</loc>
-    <lastmod>2019-11-23T00:00:00+00:00</lastmod>
+    <loc>https://www.ariesme.com/posts/2020/</loc>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.ariesme.com/</loc>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ariesme.com/tags/guacamole/</loc>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ariesme.com/posts/2020/guacamole_deployment/</loc>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ariesme.com/posts/</loc>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ariesme.com/tags/rdp/</loc>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ariesme.com/tags/ssh/</loc>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ariesme.com/tags/</loc>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ariesme.com/tags/telnet/</loc>
+    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.ariesme.com/posts/2019/</loc>
     <lastmod>2019-11-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -23,17 +63,7 @@
   </url>
   
   <url>
-    <loc>https://www.ariesme.com/posts/</loc>
-    <lastmod>2019-11-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.ariesme.com/tags/ssl/</loc>
-    <lastmod>2019-11-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.ariesme.com/tags/</loc>
     <lastmod>2019-11-23T00:00:00+00:00</lastmod>
   </url>
   

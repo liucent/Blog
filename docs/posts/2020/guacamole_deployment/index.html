@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Guacamole安装部署</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/main.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/navigators/navbar.css" />
+
+
+<link href="https://fonts.loli.net/css2?family=Noto Sans SC:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+
+
+<link rel="stylesheet" href="/assets/css/style.css" />
+
+    
+
+ <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/themes/prism-coy.min.css"> 
+
+
+<link rel="stylesheet" href="/assets/css/single.css" />
+<link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
+
+
+    
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-134996642-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    <nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+    
+    
+    
+      
+    
+    
+      
+    
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="https://www.ariesme.com/">
+      <img src="/assets/images/main-logo.png">AriesMe</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      </ul>
+    </div>
+  </div>
+  
+  <img src="/assets/images/main-logo.png" class="d-none" id="main-logo">
+  <img src="/assets/images/inverted-logo.png" class="d-none" id="inverted-logo">
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div id="search-result"></div>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="/posts/2020/">2020</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/2020/guacamole_deployment/">Guacamole安装部署</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/2019/">2019</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/several_domains_and_ssl_certificates_in_nginx/">Nginx配置多域名SSL证书</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_toc_for_hugo/">Hugo添加文章目录toc</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_prism_for_hugo_automatically/">Hugo动态加载prism.js</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/generate_wildcard_ssl/">手动生成SSL通配符证书</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_chinese_input_method_for_elementary/">Elementary安装中文输入法</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_archive_page_for_hugo/">Hugo添加归档页面</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_google_search_console_for_hugo/">Hugo添加Google收录</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_google_custom_search_for_hugo/">Hugo添加Google Custom Search站内搜索</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_go_top_button_for_hugo/">Hugo添加返回顶部按钮</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_google_analytics_for_hugo/">Hugo添加Google Analytics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_prism_for_hugo/">Hugo添加Prism代码高亮</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/autoit_windows_testcase/">AutoIt的窗口自动化测试</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_prism_for_wordpress/">WordPress添加Prism代码高亮</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/nginx_redirect_http_to_https/">Nginx强制http跳转https</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/2018/">2018</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2018/wordpress_disable_update/">WordPress关闭自动更新和版本控制</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2018/nginx_redirect_websocket/">Nginx配置WebSocket跳转</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://www.ariesme.com/assets/images/default-hero.jpg);'>
+      </div>
+  
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/assets/images/default-avatar.png'/>
+          <h5 class="author-name">Vincent Liu</h5>
+          <p>August 24, 2020</p>
+        </div>
+  
+        <div class="title">
+          <h1>Guacamole安装部署</h1>
+        </div>
+  
+        <div class="post-content" id="post-content">
+          <p>Guacamole是一个开源的web应用, 可以通过浏览器远程访问各种主机, 支持SSH, RDP, TELNET等各种协议. 用来SSH登录多台VPS很是方便.</p>
+<p>目前已经在VPS上部署使用Guacamole很长一段时间了, 最开始是直接使用的xml配置文件, 后面改成了数据库配置. VPS的系统是Ubuntu 18.04, 所以下面的部署方法理论上在Ubuntu上是没问题的. 另外这里使用的是原生安装的方式, 不是Docker方式.</p>
+<h2 id="h2_1">1. Guacamole Server部署</h2>
+<p>首先需要编译安装服务端. 但是在此之前, 需要安装好一系列依赖库. 这些库虽然可以根据需要支持的协议(SSH, RDP, TELNET等)选择性的安装, 但还是建议全部安装.</p>
+<h3 id="h3_1_1">1.1. 安装依赖库</h3>
+<table>
+<thead>
+<tr>
+<th>Library name</th>
+<th>Features</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FFmpeg</td>
+<td>libavcodec-dev, libavformat-dev, libavutil-dev, libswscale-dev</td>
+<td><code class="language-bash">sudo apt install libavcodec-dev libavformat-dev libavutil-dev libswscale-dev</code></td>
+</tr>
+<tr>
+<td>FreeRDP</td>
+<td>freerdp2-dev</td>
+<td><code class="language-bash">sudo apt install freerdp2-dev</code> <br> (Ubuntu 16.04及以前版本安装freerdp2没有成功， 估计是只支持freerdp1. Guacamole 1.0及以后版本也是支持freerdp2, 所以还是建议升级到Ubuntu 18.04)</td>
+</tr>
+<tr>
+<td>Pango</td>
+<td>libpango1.0-dev</td>
+<td><code class="language-bash">sudo apt install libpango1.0-dev</code></td>
+</tr>
+<tr>
+<td>libssh2</td>
+<td>libssh2-1-dev</td>
+<td><code class="language-bash">sudo apt install libssh2-1-dev</code></td>
+</tr>
+<tr>
+<td>libtelnet</td>
+<td>libtelnet-dev</td>
+<td><code class="language-bash">sudo apt install libtelnet-dev</code></td>
+</tr>
+<tr>
+<td>libVNCServer</td>
+<td>libvncserver-dev</td>
+<td><code class="language-bash">sudo apt install libvncserver-dev</code></td>
+</tr>
+<tr>
+<td>libwebsockets</td>
+<td>libwebsockets-dev</td>
+<td><code class="language-bash">sudo apt install libwebsockets-dev</code></td>
+</tr>
+<tr>
+<td>PulseAudio</td>
+<td>libpulse-dev</td>
+<td><code class="language-bash">sudo apt install libpulse-dev</code></td>
+</tr>
+<tr>
+<td>OpenSSL</td>
+<td>libssl-dev</td>
+<td><code class="language-bash">sudo apt install libssl-dev</code></td>
+</tr>
+<tr>
+<td>libvorbis</td>
+<td>libvorbis-dev</td>
+<td><code class="language-bash">sudo apt install libvorbis-dev</code></td>
+</tr>
+<tr>
+<td>libwebp</td>
+<td>libwebp-dev</td>
+<td><code class="language-bash">sudo apt install libwebp-dev</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="h2_1_2">1.2. 下载源码</h3>
+<p>访问<a href="http://guacamole.apache.org/releases/">release页面</a>下载最新版本并解压</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 下载</span>
+wget http://apache.org/dyn/closer.cgi?action<span style="color:#f92672">=</span>download&amp;filename<span style="color:#f92672">=</span>guacamole/1.2.0/source/guacamole-server-1.2.0.tar.gz
+<span style="color:#75715e"># 解压</span>
+tar -xzf guacamole-server-1.2.0.tar.gz
+<span style="color:#75715e"># 进入到源码文件夹</span>
+cd guacamole-server-1.2.0/
+</code></pre></div><h3 id="h2_1_3">1.3. 编译源码</h3>
+<p>首先做configure检查环境, 查看系统环境和依赖库是否满足编译要求.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./configure --with-init-dir<span style="color:#f92672">=</span>/etc/init.d
+</code></pre></div><p>若环境正常会输出如下检查结果.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">------------------------------------------------
+guacamole-server version 1.2.0
+------------------------------------------------
+
+   Library status:
+
+     freerdp2 ............ yes
+     pango ............... yes
+     libavcodec .......... yes
+     libavformat ......... yes
+     libavutil ........... yes
+     libssh2 ............. yes
+     libssl .............. yes
+     libswscale .......... yes
+     libtelnet ........... yes
+     libVNCServer ........ yes
+     libvorbis ........... yes
+     libpulse ............ yes
+     libwebsockets ....... yes
+     libwebp ............. yes
+     wsock32 ............. no
+
+   Protocol support:
+
+      Kubernetes .... yes
+      RDP ........... yes
+      SSH ........... yes
+      Telnet ........ yes
+      VNC ........... yes
+
+   Services / tools:
+
+      guacd ...... yes
+      guacenc .... yes
+      guaclog .... yes
+
+   Init scripts: /etc/init.d
+   Systemd units: no
+
+Type <span style="color:#e6db74">&#34;make&#34;</span> to compile guacamole-server.
+</code></pre></div><p>编译安装源码并配置</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 编译</span>
+make
+...
+<span style="color:#75715e"># 安装</span>
+make install
+...
+<span style="color:#75715e"># 配置</span>
+ldconfig
+</code></pre></div><p>至此, 服务端就安装完成了, 也会新增一个guacd的service.</p>
+<h2 id="h2_2">2. Guacamole Client部署</h2>
+<p>客户端需要用到servlet container. 这里直接使用Tomcat 9版本.</p>
+<h3 id="h3_2_1">2.1. 安装Tomcat</h3>
+<p><a href="https://tomcat.apache.org/download-90.cgi">Tomcat官网下载页面</a>下载tomcat包.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 下载</span>
+wget https://mirror.bit.edu.cn/apache/tomcat/tomcat-9/v9.0.37/bin/apache-tomcat-9.0.37.tar.gz
+<span style="color:#75715e"># 解压</span>
+tar -xvf apache-tomcat-9.0.37.tar.gz
+<span style="color:#75715e"># 重命名</span>
+mv apache-tomcat-9.0.37 tomcat
+</code></pre></div><p>Tomcat需要java环境, 若系统中未安装jdk需要运行如下命令安装.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install default-jdk
+</code></pre></div><p>安装完成后需要设置环境变量及其他配置, 不过Guacamole也需要设置环境变量, 所以这里暂时略过, 后面再一起设置.</p>
+<h3 id="h3_2_2">2.2. 部署客户端</h3>
+<p>客户端使用mvn package编译源码, 不过官网有发布编译好的war包, 所以直接下载war包即可. 下载链接同样是在release页面.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 下载</span>
+wget http://apache.org/dyn/closer.cgi?action<span style="color:#f92672">=</span>download&amp;filename<span style="color:#f92672">=</span>guacamole/1.2.0/binary/guacamole-1.2.0.war
+<span style="color:#75715e"># 重命名</span>
+mv guacamole-1.2.0.war guacamole.war
+</code></pre></div><p>下载好后放在Tomcat下的webapps文件夹里即可.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mv guacamole.war tomcat/webapps/
+</code></pre></div><p>至此, 客户端也已经部署完了, 但还需要做进一步的配置.</p>
+<h2 id="h2_3">3. 配置</h2>
+<p>配置主要分为四大类: 环境变量, Tomcat配置, nginx设置, Guacamole配置.</p>
+<h3 id="h3_3_1">3.1. 环境变量</h3>
+<p>这里需要设置jdk和guacamole两个环境变量. 环境变量可以直接添加到/etc/profile文件尾部. 如果jdk版本不一致, 则需要按实际版本填写路径, 如果/etc/guacamole文件不存在, 需要mkdir新建一个.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 在/etc/profile文件末尾添加如下变量</span>
+<span style="color:#75715e">#set java env</span>
+export JAVA_HOME<span style="color:#f92672">=</span>/usr/lib/jvm/java-11-openjdk-amd64
+
+<span style="color:#75715e">#set guacamole env</span>
+export GUACAMOLE_HOME<span style="color:#f92672">=</span>/etc/guacamole
+</code></pre></div><p>设置完后需要运行如下命令立即生效.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source /etc/profile
+</code></pre></div><h3 id="h3_3_2">3.2. Tomcat配置</h3>
+<p>虽然Tomcat可以直接通过外网访问, 不过一般都是用nginx反代. 所以这里需要设置禁止外网访问Tomcat. 在tomcat/conf/server.xml文件里的Host节点下添加如下字段.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;Valve</span> <span style="color:#a6e22e">className=</span><span style="color:#e6db74">&#34;org.apache.catalina.valves.RemoteAddrValve&#34;</span> <span style="color:#a6e22e">allow=</span><span style="color:#e6db74">&#34;127.0.0.1&#34;</span> <span style="color:#a6e22e">denyStatus=</span><span style="color:#e6db74">&#34;403&#34;</span> <span style="color:#a6e22e">directory=</span><span style="color:#e6db74">&#34;logs&#34;</span>
+	       <span style="color:#a6e22e">prefix=</span><span style="color:#e6db74">&#34;localhost_access_log&#34;</span> <span style="color:#a6e22e">suffix=</span><span style="color:#e6db74">&#34;.txt&#34;</span>
+	       <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;%h %l %u %t &amp;quot;%r&amp;quot; %s %b&#34;</span> <span style="color:#f92672">/&gt;</span>
+</code></pre></div><p>另外, 如果服务器的内存比较小则需要限制下Tomcat的内存占用. 在tomcat/bin/catalina.sh文件开头添加如下代码.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 根据实际情况设置内存大小.</span>
+JAVA_OPTS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-server -Xms64m -Xmx256m&#34;</span>
+</code></pre></div><h3 id="h3_3_3">3.3. nginx设置</h3>
+<p>设置反代, Tomcat默认端口8080. 在nginx站点配置文件里设置如下跳转.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">location</span> <span style="color:#e6db74">/</span> {
+            <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://127.0.0.1:8080/guacamole/</span>;
+            <span style="color:#f92672">proxy_buffering</span> <span style="color:#66d9ef">off</span>;
+            <span style="color:#f92672">proxy_http_version</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">.1</span>;
+            <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
+            <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Upgrade</span> $http_upgrade;
+            <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Connection</span> $http_connection;
+        }
+</code></pre></div><h3 id="h3_3_4">3.4. Guacamole配置</h3>
+<p>这里的配置既可以简单的使用文件也可以使用数据库. 二者选择其一就可以了.</p>
+<h4 id="h3_3_4_1">3.4.1. 文件配置</h4>
+<p>在$GUACAMOLE_HOME路径下新建两个文件guacamole.properties和user-mapping.xml.</p>
+<p>在guacamole.properties中设置主机名和端口号, 默认本机localhost和4822端口. 并设置好user-mapping.xml的路径.</p>
+<pre><code class="language-properties" data-lang="properties">guacd-hostname: localhost
+guacd-port: 4822
+user-mapping: /etc/guacamole/user-mapping.xml
+auth-provider: net.sourceforge.guacamole.net.basic.BasicFileAuthenticationProvider
+basic-user-mapping: /etc/guacamole/user-mapping.xml
+</code></pre><p>在user-mapping.xml设置远程登录的主机信息和通信协议. authorize字段是页面登录用户名密码. 每个connect对应设置一个远程连接配置.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;user-mapping&gt;</span>
+  <span style="color:#f92672">&lt;authorize</span> <span style="color:#a6e22e">username=</span><span style="color:#e6db74">&#34;user&#34;</span> <span style="color:#a6e22e">password=</span><span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;connection</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;demo_ssh&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;protocol&gt;</span>ssh<span style="color:#f92672">&lt;/protocol&gt;</span>
+      <span style="color:#f92672">&lt;param</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hostname&#34;</span><span style="color:#f92672">&gt;</span>server_ip_<span style="color:#f92672">&lt;/param&gt;</span>
+      <span style="color:#f92672">&lt;param</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;port&#34;</span><span style="color:#f92672">&gt;</span>22<span style="color:#f92672">&lt;/param&gt;</span>
+      <span style="color:#f92672">&lt;/connection&gt;</span>
+    <span style="color:#f92672">&lt;connection</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;demo_rdp&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;protocol&gt;</span>rdp<span style="color:#f92672">&lt;/protocol&gt;</span>
+      <span style="color:#f92672">&lt;param</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hostname&#34;</span><span style="color:#f92672">&gt;</span>server_ip<span style="color:#f92672">&lt;/param&gt;</span>
+      <span style="color:#f92672">&lt;param</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;port&#34;</span><span style="color:#f92672">&gt;</span>3389<span style="color:#f92672">&lt;/param&gt;</span>
+    <span style="color:#f92672">&lt;/connection&gt;</span>
+  <span style="color:#f92672">&lt;/authorize&gt;</span>
+<span style="color:#f92672">&lt;/user-mapping&gt;</span>
+</code></pre></div><h4 id="h3_3_4_2">3.4.2. 数据库配置</h4>
+<p>Guacamole支持多种数据库(MySQL, PostgreSQL, or SQL Server), 这里习惯性的使用MySQL. 首先需要下载两个jar文件. 一个是Guacamole jdbc扩展包, 一个是MySQL的Connector包.</p>
+<p>同样在release页面下载Guacamole jdbc扩展包, 然后把包里的guacamole-auth-jdbc-mysql-1.2.0.jar文件和schema文件夹放到到$GUACAMOLE_HOME/extensions下, 如果没有extensions文件夹需要新建一下.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 下载</span>
+wget http://apache.org/dyn/closer.cgi?action<span style="color:#f92672">=</span>download&amp;filename<span style="color:#f92672">=</span>guacamole/1.2.0/binary/guacamole-auth-jdbc-1.2.0.tar.gz
+<span style="color:#75715e"># 解压</span>
+tar -xvf guacamole-auth-jdbc-1.2.0.tar.gz
+<span style="color:#75715e"># 移动文件</span>
+mv guacamole-auth-jdbc-mysql-1.2.0.jar $GUACAMOLE_HOME/extensions/
+mv schema $GUACAMOLE_HOME/extensions/
+</code></pre></div><p>在<a href="https://dev.mysql.com/downloads/connector/j/">MySQL页面</a>下载Connector包, 选择Platform Indenpent版本. 并将mysql-connector-java-5.1.49-bin.jar文件放到$GUACAMOLE_HOME/lib文件夹下, 如果没有lib文件夹需要新建一下.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 下载</span>
+wget https://cdn.mysql.com//Downloads/Connector-J/mysql-connector-java-5.1.49.tar.gz
+<span style="color:#75715e"># 解压</span>
+tar -xvf mysql-connector-java-5.1.49.tar.gz
+<span style="color:#75715e"># 移动文件</span>
+mv mysql-connector-java-5.1.49-bin.jar $GUACAMOLE_HOME/lib/
+</code></pre></div><p>新建一个数据库和用户, 并给用户授权.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql -u root -p
+...
+<span style="color:#75715e"># 新建数据库, guacamole_db为数据库名</span>
+mysql&gt; create database guacamole_db;
+<span style="color:#75715e"># 新建用户, user/password为用户名/密码</span>
+mysql&gt; create user <span style="color:#e6db74">&#39;user&#39;</span>@localhost identified by <span style="color:#e6db74">&#39;password&#39;</span>;
+mysql&gt; create user <span style="color:#e6db74">&#39;user&#39;</span>@<span style="color:#e6db74">&#39;127.0.0.1&#39;</span> identified by <span style="color:#e6db74">&#39;password&#39;</span>;
+<span style="color:#75715e"># 给用户授权, guacamole_db数据库的全部权限</span>
+mysql&gt; grant all privileges on guacamole_db.* to <span style="color:#e6db74">&#39;user&#39;</span>@localhost;
+mysql&gt; grant all privileges on guacamole_db.* to <span style="color:#e6db74">&#39;user&#39;</span>@<span style="color:#e6db74">&#39;127.0.0.1&#39;</span>;
+mysql&gt; FLUSH PRIVILEGES;
+</code></pre></div><p>在配置文件里添加数据库连接信息. 这里和文件配置方式一样也会用到$GUACAMOLE_HOME/guacamole.properties文件, 但是只需要配置数据库连接并不需要配置user-mapping.xml远程连接配置文件. 其中user和password就是先前创建的数据库用户密码. MySQL默认本机localhost和3306端口.</p>
+<pre><code class="language-properties" data-lang="properties">mysql-hostname: localhost
+mysql-port: 3306
+mysql-database: guacamole_db
+mysql-username: user
+mysql-password: password
+</code></pre><p>运行Guacamole自带的初始化SQL脚本, 脚本先前已经被放在了$GUACAMOLE_HOME/extensions/schema文件夹里, 里面包含了两个文件, 一个是创建表: 001-create-schema.sql, 一个是创建默认用户: 002-create-admin-user.sql, 运行这两个文件.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat schema/*.sql | mysql -u root -p guacamole_db
+</code></pre></div><h2 id="h2_5">5. 启动服务</h2>
+<p>至此, 经过上一步的文件配置或者数据库配置就可以启动服务了. 如果是文件配置方式就可以直接用配置文件里设置的用户名密码登录页面开始使用远程连接了, 但是如果是数据库连接方式则需要用默认的guacadmin/guacadmin用户名密码登录页面, 然后新建个自己的用户并将该默认用户删掉, 防止安全问题. 登录后也就可以自行创建各种远程连接设置了.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 启动guacd服务</span>
+service guacd start
+
+<span style="color:#75715e"># 启动Tomcat</span>
+./tomcat/bin/startup.sh
+</code></pre></div><p>等待服务启动正常后就可以访问nginx配置的站点, 这时候站点也就重定向到了Guacamole客户端.</p>
+<h2 id="h2_6">6. 更新历史</h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Detail</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>初版</td>
+<td>2020-08-24</td>
+</tr>
+</tbody>
+</table>
+        </div>
+  
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://github.com/liucent/blog/edit/master/content/posts/2020/guacamole_deployment.md">
+                <i class="fas fa-code-branch"></i>
+                Improve This Page
+              </a>
+          </div>
+        
+  
+        
+      <hr />
+        <div class="row next-prev-navigator">
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+      
+        
+        
+        <div class="col-md-12 next-article">
+          <a href="/posts/2019/several_domains_and_ssl_certificates_in_nginx/" class="btn btn-outline-info">
+            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+            <br />
+            <span>Nginx配置多域名SSL证书</span>
+          </a>
+        </div>
+      
+    
+  
+
+</div>
+
+      <hr />
+      
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#h2_1">1. Guacamole Server部署</a>
+      <ul>
+        <li><a href="#h3_1_1">1.1. 安装依赖库</a></li>
+        <li><a href="#h2_1_2">1.2. 下载源码</a></li>
+        <li><a href="#h2_1_3">1.3. 编译源码</a></li>
+      </ul>
+    </li>
+    <li><a href="#h2_2">2. Guacamole Client部署</a>
+      <ul>
+        <li><a href="#h3_2_1">2.1. 安装Tomcat</a></li>
+        <li><a href="#h3_2_2">2.2. 部署客户端</a></li>
+      </ul>
+    </li>
+    <li><a href="#h2_3">3. 配置</a>
+      <ul>
+        <li><a href="#h3_3_1">3.1. 环境变量</a></li>
+        <li><a href="#h3_3_2">3.2. Tomcat配置</a></li>
+        <li><a href="#h3_3_3">3.3. nginx设置</a></li>
+        <li><a href="#h3_3_4">3.4. Guacamole配置</a>
+          <ul>
+            <li><a href="#h3_3_4_1">3.4.1. 文件配置</a></li>
+            <li><a href="#h3_3_4_2">3.4.2. 数据库配置</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#h2_5">5. 启动服务</a></li>
+    <li><a href="#h2_6">6. 更新历史</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    <footer class="container-fluid text-center align-content-center footer pb-2">
+  <div class="container pt-5">
+    <div class="row text-left">
+      <div class="col-md-4 col-sm-12">
+        <h5>Navigation</h5>
+        
+        <ul>
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+            </li>
+            
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#projects">Projects</a>
+            </li>
+            
+            
+            
+            
+        </ul>
+        
+
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <h5>Contact Me</h5>
+        <ul>
+          
+          <li><span>Email: </span> <span>hi@ariesme.com</span></li>
+          
+        </ul>
+      </div>
+      
+      <div class="col-md-4 col-sm-12">
+        
+        <p>Stay up to date with email notification</p>
+        <form>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+          <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row text-left">
+      <div class="col-md-4">
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+          <img src="/assets/images/inverted-logo.png">
+          Toha
+        </a>
+      </div>
+      <div class="col-md-4 text-center">© 2020 Copyright.</div>
+      <div class="col-md-4 text-right">
+        <a id="hugo" href="https://gohugo.io/">Powered by Hugo
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+    
+    
+
+
+
+
+    <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/prism.min.js"></script>
+
+     <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-bash.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-java.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-toml.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-yaml.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-nginx.min.js"></script>  <script src="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/components/prism-properties.min.js"></script> 
+
+    
+
+
+
+
+<script src="https://cdnjs.loli.net/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+<script src="/assets/js/search.js"></script>
+
+<script src="/assets/js/single.js"></script>
+
+
+
+  </body>
+</html>
