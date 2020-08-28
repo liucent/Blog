@@ -265,7 +265,7 @@ basic-user-mapping: /etc/guacamole/user-mapping.xml
 
 Guacamole支持多种数据库(MySQL, PostgreSQL, or SQL Server), 这里习惯性的使用MySQL. 首先需要下载两个jar文件. 一个是Guacamole jdbc扩展包, 一个是MySQL的Connector包.
 
-同样在release页面下载Guacamole jdbc扩展包, 然后把包里的guacamole-auth-jdbc-mysql-1.2.0.jar文件和schema文件夹放到到$GUACAMOLE_HOME/extensions下, 如果没有extensions文件夹需要新建一下.
+同样在release页面下载Guacamole jdbc扩展包, 然后把包里的guacamole-auth-jdbc-mysql-1.2.0.jar文件和schema文件夹放到$GUACAMOLE_HOME/extensions下, 如果没有extensions文件夹需要新建一下.
 
 ```bash
 # 下载
@@ -294,13 +294,13 @@ mv mysql-connector-java-5.1.49-bin.jar $GUACAMOLE_HOME/lib/
 mysql -u root -p
 ...
 # 新建数据库, guacamole_db为数据库名
-mysql> create database guacamole_db;
+mysql> CREATE DATABASE guacamole_db;
 # 新建用户, user/password为用户名/密码
-mysql> create user 'user'@localhost identified by 'password';
-mysql> create user 'user'@'127.0.0.1' identified by 'password';
+mysql> CREATE USER 'user'@localhost IDENTIFIED BY 'password';
+mysql> CREATE USER 'user'@'127.0.0.1' IDENTIFIED BY 'password';
 # 给用户授权, guacamole_db数据库的全部权限
-mysql> grant all privileges on guacamole_db.* to 'user'@localhost;
-mysql> grant all privileges on guacamole_db.* to 'user'@'127.0.0.1';
+mysql> GRANT ALL PRIVILEGES ON guacamole_db.* TO 'user'@localhost;
+mysql> GRANT ALL PRIVILEGES ON guacamole_db.* TO 'user'@'127.0.0.1';
 mysql> FLUSH PRIVILEGES;
 ```
 
@@ -320,7 +320,7 @@ mysql-password: password
 cat schema/*.sql | mysql -u root -p guacamole_db
 ```
 
-## 5. 启动服务 {#h2_5}
+## 4. 启动服务 {#h2_4}
 
 至此, 经过上一步的文件配置或者数据库配置就可以启动服务了. 如果是文件配置方式就可以直接用配置文件里设置的用户名密码登录页面开始使用远程连接了, 但是如果是数据库连接方式则需要用默认的guacadmin/guacadmin用户名密码登录页面, 然后新建个自己的用户并将该默认用户删掉, 防止安全问题. 登录后也就可以自行创建各种远程连接设置了.
 
@@ -334,7 +334,7 @@ service guacd start
 
 等待服务启动正常后就可以访问nginx配置的站点, 这时候站点也就重定向到了Guacamole客户端.
 
-## 6. 更新历史 {#h2_6}
+## 5. 更新历史 {#h2_5}
 
 | Version | Detail | Date |
 | ---- | ---- | ---- |

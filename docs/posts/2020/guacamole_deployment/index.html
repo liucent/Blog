@@ -545,7 +545,7 @@ basic-user-mapping: /etc/guacamole/user-mapping.xml
 <span style="color:#f92672">&lt;/user-mapping&gt;</span>
 </code></pre></div><h4 id="h3_3_4_2">3.4.2. 数据库配置</h4>
 <p>Guacamole支持多种数据库(MySQL, PostgreSQL, or SQL Server), 这里习惯性的使用MySQL. 首先需要下载两个jar文件. 一个是Guacamole jdbc扩展包, 一个是MySQL的Connector包.</p>
-<p>同样在release页面下载Guacamole jdbc扩展包, 然后把包里的guacamole-auth-jdbc-mysql-1.2.0.jar文件和schema文件夹放到到$GUACAMOLE_HOME/extensions下, 如果没有extensions文件夹需要新建一下.</p>
+<p>同样在release页面下载Guacamole jdbc扩展包, 然后把包里的guacamole-auth-jdbc-mysql-1.2.0.jar文件和schema文件夹放到$GUACAMOLE_HOME/extensions下, 如果没有extensions文件夹需要新建一下.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 下载</span>
 wget http://apache.org/dyn/closer.cgi?action<span style="color:#f92672">=</span>download&amp;filename<span style="color:#f92672">=</span>guacamole/1.2.0/binary/guacamole-auth-jdbc-1.2.0.tar.gz
 <span style="color:#75715e"># 解压</span>
@@ -564,13 +564,13 @@ mv mysql-connector-java-5.1.49-bin.jar $GUACAMOLE_HOME/lib/
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql -u root -p
 ...
 <span style="color:#75715e"># 新建数据库, guacamole_db为数据库名</span>
-mysql&gt; create database guacamole_db;
+mysql&gt; CREATE DATABASE guacamole_db;
 <span style="color:#75715e"># 新建用户, user/password为用户名/密码</span>
-mysql&gt; create user <span style="color:#e6db74">&#39;user&#39;</span>@localhost identified by <span style="color:#e6db74">&#39;password&#39;</span>;
-mysql&gt; create user <span style="color:#e6db74">&#39;user&#39;</span>@<span style="color:#e6db74">&#39;127.0.0.1&#39;</span> identified by <span style="color:#e6db74">&#39;password&#39;</span>;
+mysql&gt; CREATE USER <span style="color:#e6db74">&#39;user&#39;</span>@localhost IDENTIFIED BY <span style="color:#e6db74">&#39;password&#39;</span>;
+mysql&gt; CREATE USER <span style="color:#e6db74">&#39;user&#39;</span>@<span style="color:#e6db74">&#39;127.0.0.1&#39;</span> IDENTIFIED BY <span style="color:#e6db74">&#39;password&#39;</span>;
 <span style="color:#75715e"># 给用户授权, guacamole_db数据库的全部权限</span>
-mysql&gt; grant all privileges on guacamole_db.* to <span style="color:#e6db74">&#39;user&#39;</span>@localhost;
-mysql&gt; grant all privileges on guacamole_db.* to <span style="color:#e6db74">&#39;user&#39;</span>@<span style="color:#e6db74">&#39;127.0.0.1&#39;</span>;
+mysql&gt; GRANT ALL PRIVILEGES ON guacamole_db.* TO <span style="color:#e6db74">&#39;user&#39;</span>@localhost;
+mysql&gt; GRANT ALL PRIVILEGES ON guacamole_db.* TO <span style="color:#e6db74">&#39;user&#39;</span>@<span style="color:#e6db74">&#39;127.0.0.1&#39;</span>;
 mysql&gt; FLUSH PRIVILEGES;
 </code></pre></div><p>在配置文件里添加数据库连接信息. 这里和文件配置方式一样也会用到$GUACAMOLE_HOME/guacamole.properties文件, 但是只需要配置数据库连接并不需要配置user-mapping.xml远程连接配置文件. 其中user和password就是先前创建的数据库用户密码. MySQL默认本机localhost和3306端口.</p>
 <pre><code class="language-properties" data-lang="properties">mysql-hostname: localhost
@@ -580,7 +580,7 @@ mysql-username: user
 mysql-password: password
 </code></pre><p>运行Guacamole自带的初始化SQL脚本, 脚本先前已经被放在了$GUACAMOLE_HOME/extensions/schema文件夹里, 里面包含了两个文件, 一个是创建表: 001-create-schema.sql, 一个是创建默认用户: 002-create-admin-user.sql, 运行这两个文件.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat schema/*.sql | mysql -u root -p guacamole_db
-</code></pre></div><h2 id="h2_5">5. 启动服务</h2>
+</code></pre></div><h2 id="h2_4">4. 启动服务</h2>
 <p>至此, 经过上一步的文件配置或者数据库配置就可以启动服务了. 如果是文件配置方式就可以直接用配置文件里设置的用户名密码登录页面开始使用远程连接了, 但是如果是数据库连接方式则需要用默认的guacadmin/guacadmin用户名密码登录页面, 然后新建个自己的用户并将该默认用户删掉, 防止安全问题. 登录后也就可以自行创建各种远程连接设置了.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 启动guacd服务</span>
 service guacd start
@@ -588,7 +588,7 @@ service guacd start
 <span style="color:#75715e"># 启动Tomcat</span>
 ./tomcat/bin/startup.sh
 </code></pre></div><p>等待服务启动正常后就可以访问nginx配置的站点, 这时候站点也就重定向到了Guacamole客户端.</p>
-<h2 id="h2_6">6. 更新历史</h2>
+<h2 id="h2_5">5. 更新历史</h2>
 <table>
 <thead>
 <tr>
@@ -718,8 +718,8 @@ service guacd start
         </li>
       </ul>
     </li>
-    <li><a href="#h2_5">5. 启动服务</a></li>
-    <li><a href="#h2_6">6. 更新历史</a></li>
+    <li><a href="#h2_4">4. 启动服务</a></li>
+    <li><a href="#h2_5">5. 更新历史</a></li>
   </ul>
 </nav>
       </div>
@@ -742,10 +742,10 @@ service guacd start
             </li>
             
             
-            
             <li class="nav-item">
               <a class="smooth-scroll" href="/#projects">Projects</a>
             </li>
+            
             
             
             
