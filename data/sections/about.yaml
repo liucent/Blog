@@ -2,7 +2,7 @@
 section:
   name: About
   enable: false
-  weight: 3
+  weight: 1
   showOnNavbar: false
 
 # your designation

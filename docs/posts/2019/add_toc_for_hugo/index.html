@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-<link rel="stylesheet" href="/assets/css/main.css" />
+<link rel="stylesheet" href="/assets/css/layouts/main.css" />
 <link rel="stylesheet" href="/assets/css/style.css" />
 <link rel="stylesheet" href="/assets/css/navigators/navbar.css" />
 
@@ -23,11 +23,13 @@
 <link rel="stylesheet" href="/assets/css/style.css" />
 
     
+<meta name="description" content="Hugo添加文章目录toc" />
+
 
  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/themes/prism-coy.min.css"> 
 
 
-<link rel="stylesheet" href="/assets/css/single.css" />
+<link rel="stylesheet" href="/assets/css/layouts/single.css" />
 <link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
 
 
@@ -89,7 +91,7 @@ if (!doNotTrack) {
     <div class="sidebar-holder">
       <div class="sidebar" id="sidebar">
         <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
-        <div id="search-result"></div>
+        <div id="search-result" ></div>
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
             <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
@@ -319,7 +321,7 @@ if (!doNotTrack) {
       
       <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://www.ariesme.com/assets/images/default-hero.jpg);'>
       </div>
-  
+
       
       <div class="page-content">
         <div class="author-profile ml-auto align-self-lg-center">
@@ -327,11 +329,11 @@ if (!doNotTrack) {
           <h5 class="author-name">Vincent Liu</h5>
           <p>October 30, 2019</p>
         </div>
-  
+
         <div class="title">
           <h1>Hugo添加文章目录toc</h1>
         </div>
-  
+
         <div class="post-content" id="post-content">
           <p>这几天在原来hugo主题<a href="https://github.com/calintat/minimal">minimal</a>的基础上尝试加了两个功能, 一个是站内搜索, 一个是文章目录(Table of Contents). 不过都是跟着其他主题修改过来的. 这次先写下文章目录toc的移植修改过程.</p>
 <h2 id="h2_1">1. 添加toc显示变量</h2>
@@ -494,7 +496,7 @@ if (!doNotTrack) {
 </tbody>
 </table>
         </div>
-  
+
         
         
           <div class="btn-improve-page">
@@ -504,7 +506,7 @@ if (!doNotTrack) {
               </a>
           </div>
         
-  
+
         
       <hr />
         <div class="row next-prev-navigator">
@@ -628,9 +630,7 @@ if (!doNotTrack) {
         
         <ul>
             
-            <li class="nav-item">
-              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
-            </li>
+            
             
             
             <li class="nav-item">
@@ -638,7 +638,9 @@ if (!doNotTrack) {
             </li>
             
             
-            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+            </li>
             
             
         </ul>
@@ -708,7 +710,6 @@ if (!doNotTrack) {
 
     
     
-
 
 
 

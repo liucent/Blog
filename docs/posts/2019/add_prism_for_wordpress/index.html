@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-<link rel="stylesheet" href="/assets/css/main.css" />
+<link rel="stylesheet" href="/assets/css/layouts/main.css" />
 <link rel="stylesheet" href="/assets/css/style.css" />
 <link rel="stylesheet" href="/assets/css/navigators/navbar.css" />
 
@@ -23,11 +23,13 @@
 <link rel="stylesheet" href="/assets/css/style.css" />
 
     
+<meta name="description" content="WordPress添加Prism代码高亮" />
+
 
  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/themes/prism-coy.min.css"> 
 
 
-<link rel="stylesheet" href="/assets/css/single.css" />
+<link rel="stylesheet" href="/assets/css/layouts/single.css" />
 <link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
 
 
@@ -89,7 +91,7 @@ if (!doNotTrack) {
     <div class="sidebar-holder">
       <div class="sidebar" id="sidebar">
         <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
-        <div id="search-result"></div>
+        <div id="search-result" ></div>
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
             <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
@@ -319,7 +321,7 @@ if (!doNotTrack) {
       
       <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://www.ariesme.com/assets/images/default-hero.jpg);'>
       </div>
-  
+
       
       <div class="page-content">
         <div class="author-profile ml-auto align-self-lg-center">
@@ -327,11 +329,11 @@ if (!doNotTrack) {
           <h5 class="author-name">Vincent Liu</h5>
           <p>January 15, 2019</p>
         </div>
-  
+
         <div class="title">
           <h1>WordPress添加Prism代码高亮</h1>
         </div>
-  
+
         <div class="post-content" id="post-content">
           <p>在WordPress中添加和配置Prism代码高亮插件.</p>
 <h2 id="h2_1">下载js和css文件</h2>
@@ -355,7 +357,7 @@ if (!doNotTrack) {
 add_action(&#39;wp_enqueue_scripts&#39;, &#39;add_prism&#39;);
 </code></pre></div>
         </div>
-  
+
         
         
           <div class="btn-improve-page">
@@ -365,7 +367,7 @@ add_action(&#39;wp_enqueue_scripts&#39;, &#39;add_prism&#39;);
               </a>
           </div>
         
-  
+
         
       <hr />
         <div class="row next-prev-navigator">
@@ -475,9 +477,6 @@ add_action(&#39;wp_enqueue_scripts&#39;, &#39;add_prism&#39;);
         
         <ul>
             
-            <li class="nav-item">
-              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
-            </li>
             
             
             
@@ -486,6 +485,9 @@ add_action(&#39;wp_enqueue_scripts&#39;, &#39;add_prism&#39;);
             </li>
             
             
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+            </li>
             
             
         </ul>
@@ -555,7 +557,6 @@ add_action(&#39;wp_enqueue_scripts&#39;, &#39;add_prism&#39;);
 
     
     
-
 
 
 

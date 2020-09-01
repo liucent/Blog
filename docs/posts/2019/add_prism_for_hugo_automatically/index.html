@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-<link rel="stylesheet" href="/assets/css/main.css" />
+<link rel="stylesheet" href="/assets/css/layouts/main.css" />
 <link rel="stylesheet" href="/assets/css/style.css" />
 <link rel="stylesheet" href="/assets/css/navigators/navbar.css" />
 
@@ -23,11 +23,13 @@
 <link rel="stylesheet" href="/assets/css/style.css" />
 
     
+<meta name="description" content="Hugo动态加载prism.js" />
+
 
  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/themes/prism-coy.min.css"> 
 
 
-<link rel="stylesheet" href="/assets/css/single.css" />
+<link rel="stylesheet" href="/assets/css/layouts/single.css" />
 <link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
 
 
@@ -89,7 +91,7 @@ if (!doNotTrack) {
     <div class="sidebar-holder">
       <div class="sidebar" id="sidebar">
         <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
-        <div id="search-result"></div>
+        <div id="search-result" ></div>
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
             <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
@@ -319,7 +321,7 @@ if (!doNotTrack) {
       
       <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://www.ariesme.com/assets/images/default-hero.jpg);'>
       </div>
-  
+
       
       <div class="page-content">
         <div class="author-profile ml-auto align-self-lg-center">
@@ -327,11 +329,11 @@ if (!doNotTrack) {
           <h5 class="author-name">Vincent Liu</h5>
           <p>October 20, 2019</p>
         </div>
-  
+
         <div class="title">
           <h1>Hugo动态加载prism.js</h1>
         </div>
-  
+
         <div class="post-content" id="post-content">
           <p>以前<a href="https://www.ariesme.com/post/2019/add_prism_for_hugo">文章</a>记录过怎样在Hugo中添加prism代码高亮的方法. 但是每次添加新的语言或者想换个主题就得重新去官网下载新的js和css文件, 比较繁琐. 所以今天介绍下利用<a href="https://cdnjs.com/">cdnjs</a>来通过变量动态加载所需语言和主题的方法.</p>
 <h2 id="h2_1">添加语言和主题等变量</h2>
@@ -372,7 +374,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span> <span style="color:#960050;background-color:#1e0010">{{</span> <span style="color:#a6e22e">if</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Site</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Params</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">prismLineNumbers</span> <span style="color:#960050;background-color:#1e0010">}}</span><span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;line-numbers&#34;</span><span style="color:#960050;background-color:#1e0010">{{</span> <span style="color:#a6e22e">end</span> <span style="color:#960050;background-color:#1e0010">}}</span>&gt;
 </code></pre></div>
         </div>
-  
+
         
         
           <div class="btn-improve-page">
@@ -382,7 +384,7 @@ if (!doNotTrack) {
               </a>
           </div>
         
-  
+
         
       <hr />
         <div class="row next-prev-navigator">
@@ -493,9 +495,7 @@ if (!doNotTrack) {
         
         <ul>
             
-            <li class="nav-item">
-              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
-            </li>
+            
             
             
             <li class="nav-item">
@@ -503,7 +503,9 @@ if (!doNotTrack) {
             </li>
             
             
-            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+            </li>
             
             
         </ul>
@@ -573,7 +575,6 @@ if (!doNotTrack) {
 
     
     
-
 
 
 

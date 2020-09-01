@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-<link rel="stylesheet" href="/assets/css/main.css" />
+<link rel="stylesheet" href="/assets/css/layouts/main.css" />
 <link rel="stylesheet" href="/assets/css/style.css" />
 <link rel="stylesheet" href="/assets/css/navigators/navbar.css" />
 
@@ -23,11 +23,13 @@
 <link rel="stylesheet" href="/assets/css/style.css" />
 
     
+<meta name="description" content="Hugo添加Prism代码高亮" />
+
 
  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/themes/prism-coy.min.css"> 
 
 
-<link rel="stylesheet" href="/assets/css/single.css" />
+<link rel="stylesheet" href="/assets/css/layouts/single.css" />
 <link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
 
 
@@ -89,7 +91,7 @@ if (!doNotTrack) {
     <div class="sidebar-holder">
       <div class="sidebar" id="sidebar">
         <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
-        <div id="search-result"></div>
+        <div id="search-result" ></div>
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
             <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
@@ -319,7 +321,7 @@ if (!doNotTrack) {
       
       <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://www.ariesme.com/assets/images/default-hero.jpg);'>
       </div>
-  
+
       
       <div class="page-content">
         <div class="author-profile ml-auto align-self-lg-center">
@@ -327,11 +329,11 @@ if (!doNotTrack) {
           <h5 class="author-name">Vincent Liu</h5>
           <p>February 22, 2019</p>
         </div>
-  
+
         <div class="title">
           <h1>Hugo添加Prism代码高亮</h1>
         </div>
-  
+
         <div class="post-content" id="post-content">
           <p>Hugo自带的Chroma代码高亮不是很方便, 还是请出Prism.</p>
 <h2 id="h2_1">下载js和css文件</h2>
@@ -371,7 +373,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pre</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;line-numbers&#34;</span><span style="color:#f92672">&gt;&lt;code</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;language-html&#34;</span><span style="color:#f92672">&gt;</span>your_code<span style="color:#f92672">&lt;/code&gt;&lt;/pre&gt;</span>
 </code></pre></div>
         </div>
-  
+
         
         
           <div class="btn-improve-page">
@@ -381,7 +383,7 @@ if (!doNotTrack) {
               </a>
           </div>
         
-  
+
         
       <hr />
         <div class="row next-prev-navigator">
@@ -493,9 +495,7 @@ if (!doNotTrack) {
         
         <ul>
             
-            <li class="nav-item">
-              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
-            </li>
+            
             
             
             <li class="nav-item">
@@ -503,7 +503,9 @@ if (!doNotTrack) {
             </li>
             
             
-            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+            </li>
             
             
         </ul>
@@ -573,7 +575,6 @@ if (!doNotTrack) {
 
     
     
-
 
 
 

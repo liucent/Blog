@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-<link rel="stylesheet" href="/assets/css/main.css" />
+<link rel="stylesheet" href="/assets/css/layouts/main.css" />
 <link rel="stylesheet" href="/assets/css/style.css" />
 <link rel="stylesheet" href="/assets/css/navigators/navbar.css" />
 
@@ -23,11 +23,13 @@
 <link rel="stylesheet" href="/assets/css/style.css" />
 
     
+<meta name="description" content="Hugo添加归档页面" />
+
 
  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/themes/prism-coy.min.css"> 
 
 
-<link rel="stylesheet" href="/assets/css/single.css" />
+<link rel="stylesheet" href="/assets/css/layouts/single.css" />
 <link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
 
 
@@ -89,7 +91,7 @@ if (!doNotTrack) {
     <div class="sidebar-holder">
       <div class="sidebar" id="sidebar">
         <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
-        <div id="search-result"></div>
+        <div id="search-result" ></div>
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
             <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
@@ -319,7 +321,7 @@ if (!doNotTrack) {
       
       <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://www.ariesme.com/assets/images/default-hero.jpg);'>
       </div>
-  
+
       
       <div class="page-content">
         <div class="author-profile ml-auto align-self-lg-center">
@@ -327,11 +329,11 @@ if (!doNotTrack) {
           <h5 class="author-name">Vincent Liu</h5>
           <p>February 19, 2019</p>
         </div>
-  
+
         <div class="title">
           <h1>Hugo添加归档页面</h1>
         </div>
-  
+
         <div class="post-content" id="post-content">
           <p>Hugo默认并没有归档页面, 但可以单独添加一个归档页面.</p>
 <h2 id="h2_1">新建归档单页面模板</h2>
@@ -388,7 +390,7 @@ if (!doNotTrack) {
 ---
 </code></pre></div>
         </div>
-  
+
         
         
           <div class="btn-improve-page">
@@ -398,7 +400,7 @@ if (!doNotTrack) {
               </a>
           </div>
         
-  
+
         
       <hr />
         <div class="row next-prev-navigator">
@@ -508,9 +510,6 @@ if (!doNotTrack) {
         
         <ul>
             
-            <li class="nav-item">
-              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
-            </li>
             
             
             
@@ -519,6 +518,9 @@ if (!doNotTrack) {
             </li>
             
             
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+            </li>
             
             
         </ul>
@@ -588,7 +590,6 @@ if (!doNotTrack) {
 
     
     
-
 
 
 

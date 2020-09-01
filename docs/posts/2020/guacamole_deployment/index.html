@@ -8,7 +8,7 @@
 
 
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-<link rel="stylesheet" href="/assets/css/main.css" />
+<link rel="stylesheet" href="/assets/css/layouts/main.css" />
 <link rel="stylesheet" href="/assets/css/style.css" />
 <link rel="stylesheet" href="/assets/css/navigators/navbar.css" />
 
@@ -23,11 +23,13 @@
 <link rel="stylesheet" href="/assets/css/style.css" />
 
     
+<meta name="description" content="Guacamole安装部署" />
+
 
  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/prism/1.17.1/themes/prism-coy.min.css"> 
 
 
-<link rel="stylesheet" href="/assets/css/single.css" />
+<link rel="stylesheet" href="/assets/css/layouts/single.css" />
 <link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
 
 
@@ -89,7 +91,7 @@ if (!doNotTrack) {
     <div class="sidebar-holder">
       <div class="sidebar" id="sidebar">
         <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
-        <div id="search-result"></div>
+        <div id="search-result" ></div>
         <div class="sidebar-tree">
           <ul class="tree" id="tree">
             <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
@@ -319,7 +321,7 @@ if (!doNotTrack) {
       
       <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://www.ariesme.com/assets/images/default-hero.jpg);'>
       </div>
-  
+
       
       <div class="page-content">
         <div class="author-profile ml-auto align-self-lg-center">
@@ -327,11 +329,11 @@ if (!doNotTrack) {
           <h5 class="author-name">Vincent Liu</h5>
           <p>August 24, 2020</p>
         </div>
-  
+
         <div class="title">
           <h1>Guacamole安装部署</h1>
         </div>
-  
+
         <div class="post-content" id="post-content">
           <p>Guacamole是一个开源的web应用, 可以通过浏览器远程访问各种主机, 支持SSH, RDP, TELNET等各种协议. 用来SSH登录多台VPS很是方便.</p>
 <p>目前已经在VPS上部署使用Guacamole很长一段时间了, 最开始是直接使用的xml配置文件, 后面改成了数据库配置. VPS的系统是Ubuntu 18.04, 所以下面的部署方法理论上在Ubuntu上是没问题的. 另外这里使用的是原生安装的方式, 不是Docker方式.</p>
@@ -606,7 +608,7 @@ service guacd start
 </tbody>
 </table>
         </div>
-  
+
         
         
           <div class="btn-improve-page">
@@ -616,7 +618,7 @@ service guacd start
               </a>
           </div>
         
-  
+
         
       <hr />
         <div class="row next-prev-navigator">
@@ -737,9 +739,7 @@ service guacd start
         
         <ul>
             
-            <li class="nav-item">
-              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
-            </li>
+            
             
             
             <li class="nav-item">
@@ -747,7 +747,9 @@ service guacd start
             </li>
             
             
-            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+            </li>
             
             
         </ul>
@@ -817,7 +819,6 @@ service guacd start
 
     
     
-
 
 
 
