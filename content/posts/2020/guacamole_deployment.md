@@ -28,6 +28,18 @@ Guacamole是一个开源的web应用, 可以通过浏览器远程访问各种主
 
 ### 1.1. 安装依赖库 {#h3_1_1}
 
+a. 必选依赖库
+
+| Library name | Features | Details |
+| ---- | ---- | ---- |
+| Cairo | libcairo2-dev |  <code class="language-bash">sudo apt install libcairo2-dev</code> |
+| libjpeg-turbo | libjpeg-turbo8-dev |  <code class="language-bash">sudo apt install libjpeg-turbo8-dev</code> |
+| libpng | libpng12-dev/libpng-dev |  <code class="language-bash">sudo apt install libpng-dev</code> <br> Ubuntu 16.04之后替换为了libpng-dev |
+| libtool | libtool-bin |  <code class="language-bash">sudo apt install libtool-bin</code> |
+| OSSP UUID | libtool-bin |  <code class="language-bash">sudo apt install libossp-uuid-dev</code> |
+
+b. 可选依赖库
+
 | Library name | Features | Details |
 | ---- | ---- | ---- |
 | FFmpeg | libavcodec-dev, libavformat-dev, libavutil-dev, libswscale-dev | <code class="language-bash">sudo apt install libavcodec-dev libavformat-dev libavutil-dev libswscale-dev</code> |
@@ -48,7 +60,7 @@ Guacamole是一个开源的web应用, 可以通过浏览器远程访问各种主
 
 ```bash
 # 下载
-wget http://apache.org/dyn/closer.cgi?action=download&filename=guacamole/1.2.0/source/guacamole-server-1.2.0.tar.gz
+wget https://mirror.bit.edu.cn/apache/guacamole/1.2.0/source/guacamole-server-1.2.0.tar.gz
 # 解压
 tar -xzf guacamole-server-1.2.0.tar.gz
 # 进入到源码文件夹
@@ -155,7 +167,7 @@ sudo apt install default-jdk
 
 ```bash
 # 下载
-wget http://apache.org/dyn/closer.cgi?action=download&filename=guacamole/1.2.0/binary/guacamole-1.2.0.war
+wget https://mirror.bit.edu.cn/apache/guacamole/1.2.0/binary/guacamole-1.2.0.war
 # 重命名
 mv guacamole-1.2.0.war guacamole.war
 ```
@@ -251,7 +263,7 @@ basic-user-mapping: /etc/guacamole/user-mapping.xml
       <protocol>ssh</protocol>
       <param name="hostname">server_ip_</param>
       <param name="port">22</param>
-      </connection>
+    </connection>
     <connection name="demo_rdp">
       <protocol>rdp</protocol>
       <param name="hostname">server_ip</param>
@@ -269,7 +281,7 @@ Guacamole支持多种数据库(MySQL, PostgreSQL, or SQL Server), 这里习惯�
 
 ```bash
 # 下载
-wget http://apache.org/dyn/closer.cgi?action=download&filename=guacamole/1.2.0/binary/guacamole-auth-jdbc-1.2.0.tar.gz
+wget https://mirrors.bfsu.edu.cn/apache/guacamole/1.2.0/binary/guacamole-auth-jdbc-1.2.0.tar.gz
 # 解压
 tar -xvf guacamole-auth-jdbc-1.2.0.tar.gz
 # 移动文件
@@ -339,3 +351,4 @@ service guacd start
 | Version | Detail | Date |
 | ---- | ---- | ---- |
 | 1.0 | 初版 | 2020-08-24 |
+| 1.1 | 添加依赖库 | 2020-09-03 |

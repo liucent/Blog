@@ -340,6 +340,44 @@ if (!doNotTrack) {
 <h2 id="h2_1">1. Guacamole Server部署</h2>
 <p>首先需要编译安装服务端. 但是在此之前, 需要安装好一系列依赖库. 这些库虽然可以根据需要支持的协议(SSH, RDP, TELNET等)选择性的安装, 但还是建议全部安装.</p>
 <h3 id="h3_1_1">1.1. 安装依赖库</h3>
+<p>a. 必选依赖库</p>
+<table>
+<thead>
+<tr>
+<th>Library name</th>
+<th>Features</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cairo</td>
+<td>libcairo2-dev</td>
+<td><code class="language-bash">sudo apt install libcairo2-dev</code></td>
+</tr>
+<tr>
+<td>libjpeg-turbo</td>
+<td>libjpeg-turbo8-dev</td>
+<td><code class="language-bash">sudo apt install libjpeg-turbo8-dev</code></td>
+</tr>
+<tr>
+<td>libpng</td>
+<td>libpng12-dev/libpng-dev</td>
+<td><code class="language-bash">sudo apt install libpng-dev</code> <br> Ubuntu 16.04之后替换为了libpng-dev</td>
+</tr>
+<tr>
+<td>libtool</td>
+<td>libtool-bin</td>
+<td><code class="language-bash">sudo apt install libtool-bin</code></td>
+</tr>
+<tr>
+<td>OSSP UUID</td>
+<td>libtool-bin</td>
+<td><code class="language-bash">sudo apt install libossp-uuid-dev</code></td>
+</tr>
+</tbody>
+</table>
+<p>b. 可选依赖库</p>
 <table>
 <thead>
 <tr>
@@ -409,7 +447,7 @@ if (!doNotTrack) {
 <h3 id="h2_1_2">1.2. 下载源码</h3>
 <p>访问<a href="http://guacamole.apache.org/releases/">release页面</a>下载最新版本并解压</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 下载</span>
-wget http://apache.org/dyn/closer.cgi?action<span style="color:#f92672">=</span>download&amp;filename<span style="color:#f92672">=</span>guacamole/1.2.0/source/guacamole-server-1.2.0.tar.gz
+wget https://mirror.bit.edu.cn/apache/guacamole/1.2.0/source/guacamole-server-1.2.0.tar.gz
 <span style="color:#75715e"># 解压</span>
 tar -xzf guacamole-server-1.2.0.tar.gz
 <span style="color:#75715e"># 进入到源码文件夹</span>
@@ -484,7 +522,7 @@ mv apache-tomcat-9.0.37 tomcat
 <h3 id="h3_2_2">2.2. 部署客户端</h3>
 <p>客户端使用mvn package编译源码, 不过官网有发布编译好的war包, 所以直接下载war包即可. 下载链接同样是在release页面.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 下载</span>
-wget http://apache.org/dyn/closer.cgi?action<span style="color:#f92672">=</span>download&amp;filename<span style="color:#f92672">=</span>guacamole/1.2.0/binary/guacamole-1.2.0.war
+wget https://mirror.bit.edu.cn/apache/guacamole/1.2.0/binary/guacamole-1.2.0.war
 <span style="color:#75715e"># 重命名</span>
 mv guacamole-1.2.0.war guacamole.war
 </code></pre></div><p>下载好后放在Tomcat下的webapps文件夹里即可.</p>
@@ -537,7 +575,7 @@ basic-user-mapping: /etc/guacamole/user-mapping.xml
       <span style="color:#f92672">&lt;protocol&gt;</span>ssh<span style="color:#f92672">&lt;/protocol&gt;</span>
       <span style="color:#f92672">&lt;param</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hostname&#34;</span><span style="color:#f92672">&gt;</span>server_ip_<span style="color:#f92672">&lt;/param&gt;</span>
       <span style="color:#f92672">&lt;param</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;port&#34;</span><span style="color:#f92672">&gt;</span>22<span style="color:#f92672">&lt;/param&gt;</span>
-      <span style="color:#f92672">&lt;/connection&gt;</span>
+    <span style="color:#f92672">&lt;/connection&gt;</span>
     <span style="color:#f92672">&lt;connection</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;demo_rdp&#34;</span><span style="color:#f92672">&gt;</span>
       <span style="color:#f92672">&lt;protocol&gt;</span>rdp<span style="color:#f92672">&lt;/protocol&gt;</span>
       <span style="color:#f92672">&lt;param</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hostname&#34;</span><span style="color:#f92672">&gt;</span>server_ip<span style="color:#f92672">&lt;/param&gt;</span>
@@ -549,7 +587,7 @@ basic-user-mapping: /etc/guacamole/user-mapping.xml
 <p>Guacamole支持多种数据库(MySQL, PostgreSQL, or SQL Server), 这里习惯性的使用MySQL. 首先需要下载两个jar文件. 一个是Guacamole jdbc扩展包, 一个是MySQL的Connector包.</p>
 <p>同样在release页面下载Guacamole jdbc扩展包, 然后把包里的guacamole-auth-jdbc-mysql-1.2.0.jar文件和schema文件夹放到$GUACAMOLE_HOME/extensions下, 如果没有extensions文件夹需要新建一下.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 下载</span>
-wget http://apache.org/dyn/closer.cgi?action<span style="color:#f92672">=</span>download&amp;filename<span style="color:#f92672">=</span>guacamole/1.2.0/binary/guacamole-auth-jdbc-1.2.0.tar.gz
+wget https://mirrors.bfsu.edu.cn/apache/guacamole/1.2.0/binary/guacamole-auth-jdbc-1.2.0.tar.gz
 <span style="color:#75715e"># 解压</span>
 tar -xvf guacamole-auth-jdbc-1.2.0.tar.gz
 <span style="color:#75715e"># 移动文件</span>
@@ -604,6 +642,11 @@ service guacd start
 <td>1.0</td>
 <td>初版</td>
 <td>2020-08-24</td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>添加依赖库</td>
+<td>2020-09-03</td>
 </tr>
 </tbody>
 </table>
