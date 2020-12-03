@@ -339,10 +339,10 @@ if (!doNotTrack) {
 <h2 id="h2_1">1. 基础模板文件中添加返回顶部按钮元素</h2>
 <p>Hugo站点根目录下的基础模板文件(./layouts/_default/baseof.html)的body字段尾部添加如下代码. 如果没有该路径或者该html文件, 可以将主题目录themes下相同路径的baseof.html文件拷贝至此.</p>
 <ol>
-<li>class=&quot;btn&rdquo; 表示使用主题style.css中的.btn样式, 也可以用自己的样式</li>
-<li>id=&quot;goTopBtn&rdquo; 按钮的id, 便于在css文件中编写特定的样式, 或者在js文件编写方法</li>
-<li>onclick=&quot;smoothScrollTop()&rdquo; 点击按钮运行js文件中的smoothScrollTop方法</li>
-<li>title=&quot;Go to top&rdquo; 表示光标移动到按钮上时显示的tips</li>
+<li>class=&ldquo;btn&rdquo; 表示使用主题style.css中的.btn样式, 也可以用自己的样式</li>
+<li>id=&ldquo;goTopBtn&rdquo; 按钮的id, 便于在css文件中编写特定的样式, 或者在js文件编写方法</li>
+<li>onclick=&ldquo;smoothScrollTop()&rdquo; 点击按钮运行js文件中的smoothScrollTop方法</li>
+<li>title=&ldquo;Go to top&rdquo; 表示光标移动到按钮上时显示的tips</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
   &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;smoothScrollTop()&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;goTopBtn&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Go to top&#34;</span>&gt;TOP&lt;/<span style="color:#f92672">button</span>&gt;
@@ -350,8 +350,8 @@ if (!doNotTrack) {
 </code></pre></div><h2 id="h2_2">2. 按钮自定义样式</h2>
 <p>Hugo站点根目录下的自定义样式文件(./static/css/custom.css)中添加如下代码. 添加css和js文件的方法可以参看<a href="https://www.cloudme.top/post/2019/add_prism_for_hugo/">Hugo添加Prism代码高亮</a>这篇文章中添加prism.css和prism.js文件的方法.</p>
 <ol>
-<li>#name 表示该样式应用于id=&quot;name&quot;的元素</li>
-<li>.name 表示该样式应用于class=&quot;name&quot;的元素</li>
+<li>#name 表示该样式应用于id=&ldquo;name&quot;的元素</li>
+<li>.name 表示该样式应用于class=&ldquo;name&quot;的元素</li>
 <li>position: fixed; 表示按钮在页面上的固定位置, 结合bottom和right参数可以将按钮固定在页面左下角</li>
 <li>z-index: 99; 表示z轴参数, 将按钮置于页面最顶层, 防止被其他元素遮盖</li>
 <li>cursor: pointer; 表示光标移动到按钮上部时光标指针变成小手</li>
@@ -369,7 +369,7 @@ if (!doNotTrack) {
   <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">0.3</span><span style="color:#66d9ef">em</span>; <span style="color:#75715e">/* Rounded corners */</span>
   <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">12</span><span style="color:#66d9ef">px</span>; <span style="color:#75715e">/* Increase font size */</span>
 }
-</code></pre></div><p>下面是使用class=&quot;btn&quot;后继承于主题中的btn样式部分代码. btn:hover表示光标移动到按钮上部时按钮变色.</p>
+</code></pre></div><p>下面是使用class=&ldquo;btn&quot;后继承于主题中的btn样式部分代码. btn:hover表示光标移动到按钮上部时按钮变色.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* Button */</span>
 .<span style="color:#a6e22e">btn</span> {
 	<span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
@@ -424,7 +424,7 @@ if (!doNotTrack) {
     });
 }
 </code></pre></div><h3 id="h3_3_2">3.2. jquery方法</h3>
-<p>上面的样式是根据以前主题写的, 现在更新jquery的方法就顺便记录下当前主题配套的返回按钮样式, css代码如下, 其中返回按钮元素id=&quot;gotoTop&rdquo;.</p>
+<p>上面的样式是根据以前主题写的, 现在更新jquery的方法就顺便记录下当前主题配套的返回按钮样式, css代码如下, 其中返回按钮元素id=&ldquo;gotoTop&rdquo;.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/*gotoTop button*/</span>
 #gotoTop {
     <span style="color:#66d9ef">position</span>:<span style="color:#66d9ef">fixed</span>;

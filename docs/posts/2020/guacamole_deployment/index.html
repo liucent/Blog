@@ -584,7 +584,7 @@ basic-user-mapping: /etc/guacamole/user-mapping.xml
   <span style="color:#f92672">&lt;/authorize&gt;</span>
 <span style="color:#f92672">&lt;/user-mapping&gt;</span>
 </code></pre></div><h4 id="h3_3_4_2">3.4.2. 数据库配置</h4>
-<p>Guacamole支持多种数据库(MySQL, PostgreSQL, or SQL Server), 这里习惯性的使用MySQL. 首先需要下载两个jar文件. 一个是Guacamole jdbc扩展包, 一个是MySQL的Connector包.</p>
+<p>Guacamole支持多种数据库(MySQL, PostgreSQL, or SQL Server), 这里习惯性的使用MySQL. 首先需要下载两个jar文件. 一个是Guacamole jdbc扩展包, 一个是MySQL的Connector包. 另外, 还需要安装Mysql Client(<code class="language-bash">apt install mysql-client</code>).</p>
 <p>同样在release页面下载Guacamole jdbc扩展包, 然后把包里的guacamole-auth-jdbc-mysql-1.2.0.jar文件和schema文件夹放到$GUACAMOLE_HOME/extensions下, 如果没有extensions文件夹需要新建一下.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 下载</span>
 wget https://mirrors.bfsu.edu.cn/apache/guacamole/1.2.0/binary/guacamole-auth-jdbc-1.2.0.tar.gz
@@ -647,6 +647,11 @@ service guacd start
 <td>1.1</td>
 <td>添加依赖库</td>
 <td>2020-09-03</td>
+</tr>
+<tr>
+<td>1.2</td>
+<td>添加安装mysql-client</td>
+<td>2020-11-24</td>
 </tr>
 </tbody>
 </table>

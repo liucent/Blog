@@ -342,19 +342,19 @@ if (!doNotTrack) {
 <p>路径:./wp-content/themes/your_themes_name.</p>
 <h2 id="h2_3">添加js和css配置</h2>
 <p>functions.php 文件中添加如下代码.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">function add_prism() {
-    wp_register_style(
-        &#39;prismCSS&#39;,
-        get_stylesheet_directory_uri() . &#39;/prism.css&#39;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">add_prism</span>() {
+    <span style="color:#a6e22e">wp_register_style</span>(
+        <span style="color:#e6db74">&#39;prismCSS&#39;</span>,
+        <span style="color:#a6e22e">get_stylesheet_directory_uri</span>() <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/prism.css&#39;</span>
     );
-    wp_register_script(
-        &#39;prismJS&#39;,
-        get_stylesheet_directory_uri() . &#39;/prism.js&#39;
+    <span style="color:#a6e22e">wp_register_script</span>(
+        <span style="color:#e6db74">&#39;prismJS&#39;</span>,
+        <span style="color:#a6e22e">get_stylesheet_directory_uri</span>() <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;/prism.js&#39;</span>
     );
-    wp_enqueue_style(&#39;prismCSS&#39;);
-    wp_enqueue_script(&#39;prismJS&#39;);
+    <span style="color:#a6e22e">wp_enqueue_style</span>(<span style="color:#e6db74">&#39;prismCSS&#39;</span>);
+    <span style="color:#a6e22e">wp_enqueue_script</span>(<span style="color:#e6db74">&#39;prismJS&#39;</span>);
 }
-add_action(&#39;wp_enqueue_scripts&#39;, &#39;add_prism&#39;);
+<span style="color:#a6e22e">add_action</span>(<span style="color:#e6db74">&#39;wp_enqueue_scripts&#39;</span>, <span style="color:#e6db74">&#39;add_prism&#39;</span>);
 </code></pre></div>
         </div>
 

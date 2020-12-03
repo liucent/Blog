@@ -57,8 +57,8 @@ params:
   # specify the list of custom menus that you want to show in the top navbar.
   # they will be separated by a divider from the main menus.
   customMenus:
-  - name: Notes
-    url: https://www.ariesme.com/notes/
+  #- name: Notes
+  #  url: https://www.ariesme.com/notes/
 
   # Provide newsletter configuration. This feature hasn't been implemented yet.
   # Currently, you can just hide it from the footer.

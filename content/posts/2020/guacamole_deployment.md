@@ -275,7 +275,7 @@ basic-user-mapping: /etc/guacamole/user-mapping.xml
 
 #### 3.4.2. 数据库配置 {#h3_3_4_2}
 
-Guacamole支持多种数据库(MySQL, PostgreSQL, or SQL Server), 这里习惯性的使用MySQL. 首先需要下载两个jar文件. 一个是Guacamole jdbc扩展包, 一个是MySQL的Connector包.
+Guacamole支持多种数据库(MySQL, PostgreSQL, or SQL Server), 这里习惯性的使用MySQL. 首先需要下载两个jar文件. 一个是Guacamole jdbc扩展包, 一个是MySQL的Connector包. 另外, 还需要安装Mysql Client(<code class="language-bash">apt install mysql-client</code>).
 
 同样在release页面下载Guacamole jdbc扩展包, 然后把包里的guacamole-auth-jdbc-mysql-1.2.0.jar文件和schema文件夹放到$GUACAMOLE_HOME/extensions下, 如果没有extensions文件夹需要新建一下.
 
@@ -352,3 +352,4 @@ service guacd start
 | ---- | ---- | ---- |
 | 1.0 | 初版 | 2020-08-24 |
 | 1.1 | 添加依赖库 | 2020-09-03 |
+| 1.2 | 添加安装mysql-client | 2020-11-24 |

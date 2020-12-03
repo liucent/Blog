@@ -338,22 +338,22 @@ if (!doNotTrack) {
           <p>WordPress安装完成后,需要将不必要的自动更新和自动保存功能关闭.</p>
 <h2 id="h2_1">关闭自动更新</h2>
 <p>wp-config.php 文件中添加如下代码.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">//Disable automatic update
-define(&#39;AUTOMATIC_UPDATER_DISABLED&#39;, true);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">//Disable automatic update
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;AUTOMATIC_UPDATER_DISABLED&#39;</span>, <span style="color:#66d9ef">true</span>);
 </code></pre></div><h2 id="h2_2">关闭自动更新提示</h2>
 <p>functions.php 文件中添加如下代码.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">//Disable automatic update notification
-add_filter(&#39;pre_site_transient_update_core&#39;,create_function(&#39;$a&#39;,&#34;return null;&#34;));
-add_filter(&#39;pre_site_transient_update_plugins&#39;,create_function(&#39;$a&#39;,&#34;return null;&#34;));
-add_filter(&#39;pre_site_transient_update_themes&#39;,create_function(&#39;$a&#39;,&#34;return null;&#34;));
-remove_action(&#39;admin_init&#39;,&#39;_maybe_update_core&#39;);
-remove_action(&#39;admin_init&#39;,&#39;_maybe_update_plugins&#39;);
-remove_action(&#39;admin_init&#39;,&#39;_maybe_update_themes&#39;);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">//Disable automatic update notification
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">add_filter</span>(<span style="color:#e6db74">&#39;pre_site_transient_update_core&#39;</span>,<span style="color:#a6e22e">create_function</span>(<span style="color:#e6db74">&#39;$a&#39;</span>,<span style="color:#e6db74">&#34;return null;&#34;</span>));
+<span style="color:#a6e22e">add_filter</span>(<span style="color:#e6db74">&#39;pre_site_transient_update_plugins&#39;</span>,<span style="color:#a6e22e">create_function</span>(<span style="color:#e6db74">&#39;$a&#39;</span>,<span style="color:#e6db74">&#34;return null;&#34;</span>));
+<span style="color:#a6e22e">add_filter</span>(<span style="color:#e6db74">&#39;pre_site_transient_update_themes&#39;</span>,<span style="color:#a6e22e">create_function</span>(<span style="color:#e6db74">&#39;$a&#39;</span>,<span style="color:#e6db74">&#34;return null;&#34;</span>));
+<span style="color:#a6e22e">remove_action</span>(<span style="color:#e6db74">&#39;admin_init&#39;</span>,<span style="color:#e6db74">&#39;_maybe_update_core&#39;</span>);
+<span style="color:#a6e22e">remove_action</span>(<span style="color:#e6db74">&#39;admin_init&#39;</span>,<span style="color:#e6db74">&#39;_maybe_update_plugins&#39;</span>);
+<span style="color:#a6e22e">remove_action</span>(<span style="color:#e6db74">&#39;admin_init&#39;</span>,<span style="color:#e6db74">&#39;_maybe_update_themes&#39;</span>);
 </code></pre></div><h2 id="h2_3">关闭文章自动保存</h2>
 <p>wp-config.php 文件中添加如下代码.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">//Disable revisions and autosave per day
-define(&#39;WP_POST_REVISIONS&#39;, false);
-define(&#39;AUTOSAVE_INTERVAL&#39;, 36000);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">//Disable revisions and autosave per day
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;WP_POST_REVISIONS&#39;</span>, <span style="color:#66d9ef">false</span>);
+<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;AUTOSAVE_INTERVAL&#39;</span>, <span style="color:#ae81ff">36000</span>);
 </code></pre></div>
         </div>
 

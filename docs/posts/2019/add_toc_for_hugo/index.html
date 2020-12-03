@@ -427,7 +427,7 @@ if (!doNotTrack) {
     <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#333</span>;
 }
 </code></pre></div><ul>
-<li>除了设置静态的样式外, 也要设置下目录条目在激活状态下的样式. 当页面滚动到相应目录时, 目录条目就会处于激活状态. 这个功能是由scrollspy实现的, 这个后面再介绍. 现在只要先设置好目录条目在class=&quot;active&quot;时的样式就行, 具体的样式就是文字变色, 条目背景变色并且在条目左边生成一条小竖线.</li>
+<li>除了设置静态的样式外, 也要设置下目录条目在激活状态下的样式. 当页面滚动到相应目录时, 目录条目就会处于激活状态. 这个功能是由scrollspy实现的, 这个后面再介绍. 现在只要先设置好目录条目在class=&ldquo;active&quot;时的样式就行, 具体的样式就是文字变色, 条目背景变色并且在条目左边生成一条小竖线.</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">toc-nav</span> <span style="color:#f92672">li</span>.<span style="color:#a6e22e">active</span> .<span style="color:#a6e22e">nav-link</span> {
     <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#f6f6f6</span>;
@@ -435,7 +435,7 @@ if (!doNotTrack) {
     <span style="color:#66d9ef">border-left</span>: <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>accent);
 }
 </code></pre></div><ul>
-<li>手机, 平板等小屏幕设备上显示toc目录会很拥挤, 体验并不好. 所以在小屏幕设备上将目录隐藏. 如下代码中当屏幕宽度小于1080px时, 将隐藏class=&quot;toc&quot;的元素, 并将main元素宽度扩大到100%, 让文章内容宽度适配屏幕宽度.</li>
+<li>手机, 平板等小屏幕设备上显示toc目录会很拥挤, 体验并不好. 所以在小屏幕设备上将目录隐藏. 如下代码中当屏幕宽度小于1080px时, 将隐藏class=&ldquo;toc&quot;的元素, 并将main元素宽度扩大到100%, 让文章内容宽度适配屏幕宽度.</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* Media Queries */</span>
 @<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">1080px</span><span style="color:#f92672">)</span> {
