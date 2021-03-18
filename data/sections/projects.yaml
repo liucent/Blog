@@ -18,14 +18,23 @@ buttons:
 
 # your projects
 projects:
-- name: ServerStatus Live Demo
+- name: Project Website
   logo: images/projects/website.png
   role: Builder
   timeline: "March 2019 - Present"
   #repo: https://github.com/kubernetes/kubernetes # If your project is a public repo on GitHub, then provide this link. it will show star count.
-  url: "https://vss.ariesme.com"  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
-  summary: ServerStatus Server Probe.
-  tags: ["website","serverstatus"]
+  url: "https://github.com/liucent"  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+  summary: NodeStatus Demo https://vns.ariesme.com. ServerStatus Demo https://vss.ariesme.com.
+  tags: ["website"]
+
+- name: NodeStatus
+  logo: images/projects/github.png
+  role: Builder
+  timeline: "March 2021 - Present"
+  repo: https://github.com/liucent/NodeStatus
+  #url: "https://pdm.ariesme.com"
+  summary: Server Probe with Vercel Serverless, Cloud MongoDB and Bash Client. NodeStatus is the upgrade product for ServerStatus.
+  tags: ["github","nodestatus","serverless","mongodb"]
 
 - name: ServerStatus
   logo: images/projects/github.png
