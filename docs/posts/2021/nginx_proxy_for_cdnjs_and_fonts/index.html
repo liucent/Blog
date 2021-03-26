@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nginx反代cdnjs和fonts</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/layouts/main.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/navigators/navbar.css" />
+
+
+<link href="https://fonts.ariesme.com/css2?family=Noto Sans SC:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.ariesme.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
+<link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+
+
+<link rel="stylesheet" href="/assets/css/style.css" />
+
+    
+<meta name="description" content="Nginx反代cdnjs和fonts" />
+
+
+ <link rel="stylesheet" href="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/themes/prism-coy.min.css"> 
+
+
+<link rel="stylesheet" href="/assets/css/layouts/single.css" />
+<link rel="stylesheet" href="/assets/css/navigators/sidebar.css">
+
+
+    
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-134996642-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    <nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+    
+    
+    
+      
+    
+    
+      
+    
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="https://www.ariesme.com/">
+      <img src="/assets/images/main-logo.png">AriesMe</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      </ul>
+    </div>
+  </div>
+  
+  <img src="/assets/images/main-logo.png" class="d-none" id="main-logo">
+  <img src="/assets/images/inverted-logo.png" class="d-none" id="inverted-logo">
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <input type="text" value="" placeholder="Search" data-search="" id="search-box" />
+        <div id="search-result" ></div>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="/posts/2021/">2021</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/2021/nginx_proxy_for_cdnjs_and_fonts/">Nginx反代cdnjs和fonts</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/2020/">2020</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2020/guacamole_deployment/">Guacamole安装部署</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/2019/">2019</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/several_domains_and_ssl_certificates_in_nginx/">Nginx配置多域名SSL证书</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_toc_for_hugo/">Hugo添加文章目录toc</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_prism_for_hugo_automatically/">Hugo动态加载prism.js</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/generate_wildcard_ssl/">手动生成SSL通配符证书</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_chinese_input_method_for_elementary/">Elementary安装中文输入法</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_archive_page_for_hugo/">Hugo添加归档页面</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_google_search_console_for_hugo/">Hugo添加Google收录</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_google_custom_search_for_hugo/">Hugo添加Google Custom Search站内搜索</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_go_top_button_for_hugo/">Hugo添加返回顶部按钮</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_google_analytics_for_hugo/">Hugo添加Google Analytics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_prism_for_hugo/">Hugo添加Prism代码高亮</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/autoit_windows_testcase/">AutoIt的窗口自动化测试</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/add_prism_for_wordpress/">WordPress添加Prism代码高亮</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2019/nginx_redirect_http_to_https/">Nginx强制http跳转https</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/2018/">2018</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2018/wordpress_disable_update/">WordPress关闭自动更新和版本控制</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/2018/nginx_redirect_websocket/">Nginx配置WebSocket跳转</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(https://www.ariesme.com/assets/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/assets/images/default-avatar.png'/>
+          <h5 class="author-name">Vincent Liu</h5>
+          <p>March 26, 2021</p>
+        </div>
+
+        <div class="title">
+          <h1>Nginx反代cdnjs和fonts</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+          <p>最近有点不想用公共cdn, 于是就着手用自己手头的VPS里的Nginx反代Cloudflare cdnjs和Google fonts. 方法其实并不难, 特别是服务器上已经有Nginx环境的.</p>
+<p>首先，毕竟是要用https的，所以准备好自己的域名以及ssl证书. 这里假设用cdnjs.yours.com反代cdnjs.cloudflare.com, 用fonts.yours.com反代fonts.googleapis.com和fonts.gstatic.com. 其中fonts.googleapis.com是返回各个字体的css文件, fonts.gstatic.com则是css文件里面标识的下载单个字体文件的域名.</p>
+<h2 id="h2_1">1. Nginx反代cdnjs</h2>
+<p>假设ssl证书都已经设置好了, 在nginx的配置文件里的http结构添加cache信息, 如果没有http结构则只需添加在server结构外即可.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#75715e"># cache路径, 过期时间, 最大大小
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">proxy_cache_path</span>  <span style="color:#e6db74">/home/wwwroot/cdnjs.yours.com</span> <span style="color:#e6db74">levels=1:2</span> <span style="color:#e6db74">keys_zone=cache_cdnjs:20m</span> <span style="color:#e6db74">inactive=1d</span> <span style="color:#e6db74">max_size=100m</span>;
+</code></pre></div><p>在server结构里添加location反代设置.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">location</span> <span style="color:#e6db74">/</span> {
+    <span style="color:#75715e"># 设置referers白名单, 只有*.yours.com发过来的请求才会做反代, 其余请求直接返回403
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">valid_referers</span> <span style="color:#e6db74">none</span> <span style="color:#e6db74">blocked</span> <span style="color:#e6db74">server_names</span>  <span style="color:#e6db74">*.yours.com</span> ;
+    <span style="color:#f92672">if</span> <span style="color:#e6db74">(</span>$invalid_referer<span style="color:#e6db74">)</span> {
+        <span style="color:#f92672">return</span> <span style="color:#ae81ff">403</span>;
+    }
+
+    <span style="color:#f92672">proxy_pass_header</span> <span style="color:#e6db74">Server</span>;
+    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> <span style="color:#e6db74">fonts.gstatic.com</span>;
+    <span style="color:#f92672">proxy_redirect</span> <span style="color:#66d9ef">off</span>;
+    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
+    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Scheme</span> $scheme;
+    <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">https://fonts.gstatic.com</span>;
+    <span style="color:#f92672">proxy_cache</span> <span style="color:#e6db74">cache_fonts</span>;
+
+    <span style="color:#75715e"># cache过期时间1天
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_cache_valid</span>  <span style="color:#ae81ff">200</span> <span style="color:#ae81ff">304</span> <span style="color:#e6db74">1d</span>;
+    <span style="color:#f92672">proxy_cache_key</span> $host$uri$is_args$args;
+    <span style="color:#f92672">expires</span> <span style="color:#e6db74">1d</span>;
+}
+</code></pre></div><h2 id="h2_2">2. Nginx反代fonts</h2>
+<p>在nginx的配置文件里的http结构添加cache信息, 如果没有http结构则只需添加在server结构外即可.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#75715e"># cache路径, 过期时间, 最大大小
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">proxy_cache_path</span>  <span style="color:#e6db74">/home/wwwroot/fonts.yours.com</span> <span style="color:#e6db74">levels=1:2</span> <span style="color:#e6db74">keys_zone=cache_fonts:20m</span> <span style="color:#e6db74">inactive=1d</span> <span style="color:#e6db74">max_size=100m</span>;
+</code></pre></div><p>反代Google fonts会稍微麻烦点. 因为字体请求流程是这样的:</p>
+<ol>
+<li>发送请求到fonts.googleapis.com/css, Google会返回一个css文件. 文件里包含不同字号大小的字体文件路径url(fonts.gstatic.com).</li>
+<li>根据不同字号大小的url请求相应的单字体文件.</li>
+</ol>
+<p>由此可见我们不仅先要反代请求到fonts.googleapis.com还要把返回的css文件里的fonts.gstatic.com全部替换为我们自己的域名fonts.yours.com.</p>
+<p>在server结构里添加location反代设置.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#75715e"># 反代字体请求发到fonts.googleapis.com
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">location</span> <span style="color:#e6db74">/css</span> {
+    <span style="color:#f92672">valid_referers</span> <span style="color:#e6db74">none</span> <span style="color:#e6db74">blocked</span> <span style="color:#e6db74">server_names</span>  <span style="color:#e6db74">*.yours.com</span> ;
+    <span style="color:#f92672">if</span> <span style="color:#e6db74">(</span>$invalid_referer<span style="color:#e6db74">)</span> {
+        <span style="color:#f92672">return</span> <span style="color:#ae81ff">403</span>;
+    }
+
+    <span style="color:#75715e"># 将返回的css文件里的fonts.gstatic.com替换成自己的域名fonts.yours.com
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">sub_filter</span> <span style="color:#e6db74">&#39;fonts.gstatic.com&#39;</span> <span style="color:#e6db74">&#39;fonts.yours.com&#39;</span>;
+    <span style="color:#f92672">sub_filter_once</span> <span style="color:#66d9ef">off</span>;
+
+    <span style="color:#f92672">sub_filter_types</span> <span style="color:#e6db74">text/css</span>;
+    <span style="color:#f92672">proxy_pass_header</span> <span style="color:#e6db74">Server</span>;
+    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> <span style="color:#e6db74">fonts.googleapis.com</span>;
+    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Accept-Encoding</span> <span style="color:#e6db74">&#39;&#39;</span>;
+    <span style="color:#f92672">proxy_redirect</span> <span style="color:#66d9ef">off</span>;
+    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
+    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Scheme</span> $scheme;
+    <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">https://fonts.googleapis.com</span>;
+    <span style="color:#f92672">proxy_cache</span> <span style="color:#e6db74">cache_fonts</span>;
+    <span style="color:#f92672">proxy_cache_valid</span>  <span style="color:#ae81ff">200</span> <span style="color:#ae81ff">304</span> <span style="color:#e6db74">1d</span>;
+    <span style="color:#f92672">proxy_cache_key</span> $host$uri$is_args$args;
+    <span style="color:#f92672">expires</span> <span style="color:#e6db74">1d</span>;
+}
+
+<span style="color:#66d9ef">location</span> <span style="color:#e6db74">/icon</span> {
+    <span style="color:#f92672">valid_referers</span> <span style="color:#e6db74">none</span> <span style="color:#e6db74">blocked</span> <span style="color:#e6db74">server_names</span>  <span style="color:#e6db74">*.yours.com</span> ;
+    <span style="color:#f92672">if</span> <span style="color:#e6db74">(</span>$invalid_referer<span style="color:#e6db74">)</span> {
+        <span style="color:#f92672">return</span> <span style="color:#ae81ff">403</span>;
+    }
+    <span style="color:#f92672">sub_filter</span> <span style="color:#e6db74">&#39;fonts.gstatic.com&#39;</span> <span style="color:#e6db74">&#39;fonts.yours.com&#39;</span>;
+    <span style="color:#f92672">sub_filter_once</span> <span style="color:#66d9ef">off</span>;
+    <span style="color:#f92672">sub_filter_types</span> <span style="color:#e6db74">text/css</span>;
+    <span style="color:#f92672">proxy_pass_header</span> <span style="color:#e6db74">Server</span>;
+    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> <span style="color:#e6db74">fonts.googleapis.com</span>;
+    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Accept-Encoding</span> <span style="color:#e6db74">&#39;&#39;</span>;
+    <span style="color:#f92672">proxy_redirect</span> <span style="color:#66d9ef">off</span>;
+    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
+    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Scheme</span> $scheme;
+    <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">https://fonts.googleapis.com</span>;
+    <span style="color:#f92672">proxy_cache</span> <span style="color:#e6db74">cache_fonts</span>;
+    <span style="color:#f92672">proxy_cache_valid</span>  <span style="color:#ae81ff">200</span> <span style="color:#ae81ff">304</span> <span style="color:#e6db74">1d</span>;
+    <span style="color:#f92672">proxy_cache_key</span> $host$uri$is_args$args;
+    <span style="color:#f92672">expires</span> <span style="color:#e6db74">1d</span>;
+}
+
+<span style="color:#75715e"># 反代单个字体文件请求到fonts.gstatic.com
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">location</span> <span style="color:#e6db74">/</span> {
+    <span style="color:#f92672">valid_referers</span> <span style="color:#e6db74">none</span> <span style="color:#e6db74">blocked</span> <span style="color:#e6db74">server_names</span>  <span style="color:#e6db74">*.yours.com</span> ;
+    <span style="color:#f92672">if</span> <span style="color:#e6db74">(</span>$invalid_referer<span style="color:#e6db74">)</span> {
+        <span style="color:#f92672">return</span> <span style="color:#ae81ff">403</span>;
+    }
+    <span style="color:#f92672">proxy_pass_header</span> <span style="color:#e6db74">Server</span>;
+    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> <span style="color:#e6db74">fonts.gstatic.com</span>;
+    <span style="color:#f92672">proxy_redirect</span> <span style="color:#66d9ef">off</span>;
+    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
+    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Scheme</span> $scheme;
+    <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">https://fonts.gstatic.com</span>;
+    <span style="color:#f92672">proxy_cache</span> <span style="color:#e6db74">cache_fonts</span>;
+    <span style="color:#f92672">proxy_cache_valid</span>  <span style="color:#ae81ff">200</span> <span style="color:#ae81ff">304</span> <span style="color:#e6db74">1d</span>;
+    <span style="color:#f92672">proxy_cache_key</span> $host$uri$is_args$args;
+    <span style="color:#f92672">expires</span> <span style="color:#e6db74">1d</span>;
+}
+</code></pre></div><h2 id="h2_3">3. 更新历史</h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Detail</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>初版</td>
+<td>2021-03-26</td>
+</tr>
+</tbody>
+</table>
+        </div>
+
+        
+        
+          <div class="btn-improve-page">
+              <a href="https://github.com/liucent/blog/edit/master/content/posts/2021/nginx_proxy_for_cdnjs_and_fonts.md">
+                <i class="fas fa-code-branch"></i>
+                Improve This Page
+              </a>
+          </div>
+        
+
+        
+      <hr />
+        <div class="row next-prev-navigator">
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+      
+        
+        
+        <div class="col-md-12 next-article">
+          <a href="/posts/2020/guacamole_deployment/" class="btn btn-outline-info">
+            <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+            <br />
+            <span>Guacamole安装部署</span>
+          </a>
+        </div>
+      
+    
+  
+
+</div>
+
+      <hr />
+      
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#h2_1">1. Nginx反代cdnjs</a></li>
+    <li><a href="#h2_2">2. Nginx反代fonts</a></li>
+    <li><a href="#h2_3">3. 更新历史</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    <footer class="container-fluid text-center align-content-center footer pb-2">
+  <div class="container pt-5">
+    <div class="row text-left">
+      <div class="col-md-4 col-sm-12">
+        <h5>Navigation</h5>
+        
+        <ul>
+            
+            
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#projects">Projects</a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="smooth-scroll" href="/#recent-posts">Recent Posts</a>
+            </li>
+            
+            
+        </ul>
+        
+
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <h5>Contact Me</h5>
+        <ul>
+          
+          <li><span>Email: </span> <span>hi@ariesme.com</span></li>
+          
+        </ul>
+      </div>
+      
+      <div class="col-md-4 col-sm-12">
+        
+        <p>Stay up to date with email notification</p>
+        <form>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+          <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row text-left">
+      <div class="col-md-4">
+        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+          <img src="/assets/images/inverted-logo.png">
+          Toha
+        </a>
+      </div>
+      <div class="col-md-4 text-center">© 2020 Copyright.</div>
+      <div class="col-md-4 text-right">
+        <a id="hugo" href="https://gohugo.io/">Powered by Hugo
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/main.js"></script>
+
+
+    
+    
+
+
+
+    <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+
+     <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-bash.min.js"></script>  <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-java.min.js"></script>  <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-toml.min.js"></script>  <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-yaml.min.js"></script>  <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-nginx.min.js"></script>  <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-properties.min.js"></script> 
+
+    
+
+
+
+
+<script src="https://cdnjs.ariesme.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="https://cdnjs.ariesme.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+<script src="/assets/js/search.js"></script>
+
+<script src="/assets/js/single.js"></script>
+
+
+
+  </body>
+</html>

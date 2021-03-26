@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cdnjs on AriesMe</title>
+    <link>https://www.ariesme.com/tags/cdnjs/</link>
+    <description>Recent content in cdnjs on AriesMe</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.ariesme.com/tags/cdnjs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx反代cdnjs和fonts</title>
+      <link>https://www.ariesme.com/posts/2021/nginx_proxy_for_cdnjs_and_fonts/</link>
+      <pubDate>Fri, 26 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ariesme.com/posts/2021/nginx_proxy_for_cdnjs_and_fonts/</guid>
+      <description>&lt;p&gt;最近有点不想用公共cdn, 于是就着手用自己手头的VPS里的Nginx反代Cloudflare cdnjs和Google fonts. 方法其实并不难, 特别是服务器上已经有Nginx环境的.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

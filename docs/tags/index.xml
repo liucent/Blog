@@ -6,7 +6,43 @@
     <description>Recent content in Tags on AriesMe</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.ariesme.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.ariesme.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cdnjs</title>
+      <link>https://www.ariesme.com/tags/cdnjs/</link>
+      <pubDate>Fri, 26 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ariesme.com/tags/cdnjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fonts</title>
+      <link>https://www.ariesme.com/tags/fonts/</link>
+      <pubDate>Fri, 26 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ariesme.com/tags/fonts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://www.ariesme.com/tags/nginx/</link>
+      <pubDate>Fri, 26 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ariesme.com/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxy</title>
+      <link>https://www.ariesme.com/tags/proxy/</link>
+      <pubDate>Fri, 26 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.ariesme.com/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>guacamole</title>
       <link>https://www.ariesme.com/tags/guacamole/</link>
@@ -40,15 +76,6 @@
       <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.ariesme.com/tags/telnet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nginx</title>
-      <link>https://www.ariesme.com/tags/nginx/</link>
-      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.ariesme.com/tags/nginx/</guid>
       <description></description>
     </item>
     
