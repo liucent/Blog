@@ -375,12 +375,12 @@ if (!doNotTrack) {
     }
 
     <span style="color:#f92672">proxy_pass_header</span> <span style="color:#e6db74">Server</span>;
-    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> <span style="color:#e6db74">fonts.gstatic.com</span>;
+    <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Host</span> <span style="color:#e6db74">cdnjs.cloudflare.com</span>;
     <span style="color:#f92672">proxy_redirect</span> <span style="color:#66d9ef">off</span>;
     <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Real-IP</span> $remote_addr;
     <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Scheme</span> $scheme;
-    <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">https://fonts.gstatic.com</span>;
-    <span style="color:#f92672">proxy_cache</span> <span style="color:#e6db74">cache_fonts</span>;
+    <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">https://cdnjs.cloudflare.com</span>;
+    <span style="color:#f92672">proxy_cache</span> <span style="color:#e6db74">cache_cdnjs</span>;
 
     <span style="color:#75715e"># cache过期时间1天
 </span><span style="color:#75715e"></span>    <span style="color:#f92672">proxy_cache_valid</span>  <span style="color:#ae81ff">200</span> <span style="color:#ae81ff">304</span> <span style="color:#e6db74">1d</span>;
@@ -475,6 +475,11 @@ if (!doNotTrack) {
 <td>1.0</td>
 <td>初版</td>
 <td>2021-03-26</td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>修改错误</td>
+<td>2021-03-27</td>
 </tr>
 </tbody>
 </table>

@@ -42,12 +42,12 @@ location / {
     }
 
     proxy_pass_header Server;
-    proxy_set_header Host fonts.gstatic.com;
+    proxy_set_header Host cdnjs.cloudflare.com;
     proxy_redirect off;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Scheme $scheme;
-    proxy_pass https://fonts.gstatic.com;
-    proxy_cache cache_fonts;
+    proxy_pass https://cdnjs.cloudflare.com;
+    proxy_cache cache_cdnjs;
 
     # cache过期时间1天
     proxy_cache_valid  200 304 1d;
@@ -145,3 +145,4 @@ location / {
 | Version | Detail | Date |
 | ---- | ---- | ---- |
 | 1.0 | 初版 | 2021-03-26 |
+| 1.1 | 修改错误 | 2021-03-27 |
