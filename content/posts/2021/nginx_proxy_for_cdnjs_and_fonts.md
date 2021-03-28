@@ -140,9 +140,32 @@ location / {
 }
 ```
 
-## 3. 更新历史 {#h2_3}
+## 3. referer白名单 {#h2_3}
+
+原以为上一节代码中的valid_referers写法是只让*.yours.com域名才能反代的白名单. 但是自己浏览器直接访问cdnjs.yours.com请求却是可以被成功反代的. 于是上网查了查原来白名单的写法是这样的.
+
+```nginx
+# none: referer为空也加入白名单, 意味着浏览器直接发请求也会成功返回.
+# blocked: 非http/https协议也加入白名单, 即其他协议请求也会成功返回.
+valid_referers none blocked server_names  *.yours.com ;
+```
+
+所以如果只允许自己的域名能返回成功, 那就只需要加上自己的域名即可.
+
+```nginx
+valid_referers server_names  *.yours.com ;
+```
+
+另外为方便本地调试, 也可以在后面加上localhost. 这样本地起的工程也可以返回成功.
+
+```nginx
+valid_referers server_names  *.yours.com localhost ;
+```
+
+## 4. 更新历史 {#h2_4}
 
 | Version | Detail | Date |
 | ---- | ---- | ---- |
 | 1.0 | 初版 | 2021-03-26 |
 | 1.1 | 修改错误 | 2021-03-27 |
+| 1.2 | 白名单说明 | 2021-03-28 |

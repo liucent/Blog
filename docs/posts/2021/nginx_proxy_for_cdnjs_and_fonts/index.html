@@ -461,7 +461,16 @@ if (!doNotTrack) {
     <span style="color:#f92672">proxy_cache_key</span> $host$uri$is_args$args;
     <span style="color:#f92672">expires</span> <span style="color:#e6db74">1d</span>;
 }
-</code></pre></div><h2 id="h2_3">3. 更新历史</h2>
+</code></pre></div><h2 id="h2_3">3. referer白名单</h2>
+<p>原以为上一节代码中的valid_referers写法是只让*.yours.com域名才能反代的白名单. 但是自己浏览器直接访问cdnjs.yours.com请求却是可以被成功反代的. 于是上网查了查原来白名单的写法是这样的.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#75715e"># none: referer为空也加入白名单, 意味着浏览器直接发请求也会成功返回.
+</span><span style="color:#75715e"># blocked: 非http/https协议也加入白名单, 即其他协议请求也会成功返回.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">valid_referers</span> <span style="color:#e6db74">none</span> <span style="color:#e6db74">blocked</span> <span style="color:#e6db74">server_names</span>  <span style="color:#e6db74">*.yours.com</span> ;
+</code></pre></div><p>所以如果只允许自己的域名能返回成功, 那就只需要加上自己的域名即可.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">valid_referers</span> <span style="color:#e6db74">server_names</span>  <span style="color:#e6db74">*.yours.com</span> ;
+</code></pre></div><p>另外为方便本地调试, 也可以在后面加上localhost. 这样本地起的工程也可以返回成功.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">valid_referers</span> <span style="color:#e6db74">server_names</span>  <span style="color:#e6db74">*.yours.com</span> <span style="color:#e6db74">localhost</span> ;
+</code></pre></div><h2 id="h2_4">4. 更新历史</h2>
 <table>
 <thead>
 <tr>
@@ -480,6 +489,11 @@ if (!doNotTrack) {
 <td>1.1</td>
 <td>修改错误</td>
 <td>2021-03-27</td>
+</tr>
+<tr>
+<td>1.2</td>
+<td>白名单说明</td>
+<td>2021-03-28</td>
 </tr>
 </tbody>
 </table>
@@ -574,7 +588,8 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#h2_1">1. Nginx反代cdnjs</a></li>
     <li><a href="#h2_2">2. Nginx反代fonts</a></li>
-    <li><a href="#h2_3">3. 更新历史</a></li>
+    <li><a href="#h2_3">3. referer白名单</a></li>
+    <li><a href="#h2_4">4. 更新历史</a></li>
   </ul>
 </nav>
       </div>
