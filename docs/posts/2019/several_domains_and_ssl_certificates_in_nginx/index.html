@@ -14,7 +14,8 @@
 
 
 <link href="https://fonts.ariesme.com/css2?family=Noto Sans SC:wght@300;400;500;600" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.ariesme.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" />
 
 
 <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
@@ -26,7 +27,9 @@
 <meta name="description" content="Nginx配置多域名SSL证书" />
 
 
- <link rel="stylesheet" href="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/themes/prism-coy.min.css"> 
+
+
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism-coy.min.css"> 
 
 
 <link rel="stylesheet" href="/assets/css/layouts/single.css" />
@@ -363,35 +366,35 @@ if (!doNotTrack) {
           <p>一直以来都只在nginx中使用过单域名以及单个SSL证书的配置. 前些天注册了个新域名并把新域名套上了cloudflare. 于是就想把新老域名都配置上同一个nginx站点, 也顺便对比下套与不套cloudflare的区别.</p>
 <h2 id="h2_1">原有站点配置文件</h2>
 <p>在nginx的配置文件路径下找到原有站点的配置文件(一般在该路径下/usr/local/nginx/conf/vhost/). 找到类似如下的server配置项.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span>
-    {
-        <span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">http2</span>;
-        <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:443</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">http2</span>;
-        <span style="color:#f92672">server_name</span> <span style="color:#e6db74">www.aaa.com</span> ;
-        <span style="color:#f92672">index</span> <span style="color:#e6db74">index.html</span> <span style="color:#e6db74">index.htm</span> <span style="color:#e6db74">index.php</span> <span style="color:#e6db74">default.html</span> <span style="color:#e6db74">default.htm</span> <span style="color:#e6db74">default.php</span>;
-        <span style="color:#f92672">root</span>  <span style="color:#e6db74">/home/wwwroot/www.aaa.com</span>;
-
-        <span style="color:#f92672">ssl_certificate</span> <span style="color:#e6db74">/etc/letsencrypt/live/www.aaa.com/fullchain.pem</span>;
-        <span style="color:#f92672">ssl_certificate_key</span> <span style="color:#e6db74">/etc/letsencrypt/live/www.aaa.com/privkey.pem</span>;
-        <span style="color:#75715e">#...
-</span><span style="color:#75715e"></span>    }
-</code></pre></div><h2 id="h2_2">添加新域名和证书</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">http2</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:443</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">http2</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">server_name</span> <span style="color:#e6db74">www.aaa.com</span> ;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">index</span> <span style="color:#e6db74">index.html</span> <span style="color:#e6db74">index.htm</span> <span style="color:#e6db74">index.php</span> <span style="color:#e6db74">default.html</span> <span style="color:#e6db74">default.htm</span> <span style="color:#e6db74">default.php</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">root</span>  <span style="color:#e6db74">/home/wwwroot/www.aaa.com</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ssl_certificate</span> <span style="color:#e6db74">/etc/letsencrypt/live/www.aaa.com/fullchain.pem</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ssl_certificate_key</span> <span style="color:#e6db74">/etc/letsencrypt/live/www.aaa.com/privkey.pem</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">#...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span></code></pre></div><h2 id="h2_2">添加新域名和证书</h2>
 <p>在上述server配置项下再添加一个相同的server配置项并把相应域名改称新域名, 证书路径也改成新域名证书的路径. server中的其他配置, 特别是root的配置千万不要修改.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span>
-    {
-        <span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">http2</span>;
-        <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:443</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">http2</span>;
-        <span style="color:#f92672">server_name</span> <span style="color:#e6db74">www.bbb.com</span>; <span style="color:#75715e">#更改成新域名
-</span><span style="color:#75715e"></span>        <span style="color:#f92672">index</span> <span style="color:#e6db74">index.html</span> <span style="color:#e6db74">index.htm</span> <span style="color:#e6db74">index.php</span> <span style="color:#e6db74">default.html</span> <span style="color:#e6db74">default.htm</span> <span style="color:#e6db74">default.php</span>;
-        <span style="color:#f92672">root</span>  <span style="color:#e6db74">/home/wwwroot/www.aaa.com</span>; <span style="color:#75715e">#不要修改
-</span><span style="color:#75715e"></span>
-        <span style="color:#75715e">#更改成新域名证书的路径
-</span><span style="color:#75715e"></span>        <span style="color:#f92672">ssl_certificate</span> <span style="color:#e6db74">/etc/letsencrypt/live/www.bbb.com/fullchain.pem</span>;
-        <span style="color:#f92672">ssl_certificate_key</span> <span style="color:#e6db74">/etc/letsencrypt/live/www.bbb.com/privkey.pem</span>;
-        
-        <span style="color:#75715e">#...
-</span><span style="color:#75715e"></span>    }
-</code></pre></div><h2 id="h2_3">重启nginx</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-nginx" data-lang="nginx"><span style="display:flex;"><span><span style="color:#66d9ef">server</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">listen</span> <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">http2</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">listen</span> <span style="color:#e6db74">[::]:443</span> <span style="color:#e6db74">ssl</span> <span style="color:#e6db74">http2</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">server_name</span> <span style="color:#e6db74">www.bbb.com</span>; <span style="color:#75715e">#更改成新域名
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#f92672">index</span> <span style="color:#e6db74">index.html</span> <span style="color:#e6db74">index.htm</span> <span style="color:#e6db74">index.php</span> <span style="color:#e6db74">default.html</span> <span style="color:#e6db74">default.htm</span> <span style="color:#e6db74">default.php</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">root</span>  <span style="color:#e6db74">/home/wwwroot/www.aaa.com</span>; <span style="color:#75715e">#不要修改
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">#更改成新域名证书的路径
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#f92672">ssl_certificate</span> <span style="color:#e6db74">/etc/letsencrypt/live/www.bbb.com/fullchain.pem</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ssl_certificate_key</span> <span style="color:#e6db74">/etc/letsencrypt/live/www.bbb.com/privkey.pem</span>;
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">#...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span></code></pre></div><h2 id="h2_3">重启nginx</h2>
 <p>修改并保存站点配置文件后直接重启nginx, 然后通过新老域名都可以访问站点了. 另外如果套了cloudflare就需要在cloudflare上设置成full或者full(strict).</p>
 <h2 id="h2_4">更新历史</h2>
 <table>
@@ -617,17 +620,21 @@ if (!doNotTrack) {
 
 
 
-    <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.min.js"></script>
 
-     <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-bash.min.js"></script>  <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-java.min.js"></script>  <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-toml.min.js"></script>  <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-yaml.min.js"></script>  <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-nginx.min.js"></script>  <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-properties.min.js"></script> 
+    
+     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-bash.min.js"></script>  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-toml.min.js"></script>  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-yaml.min.js"></script>  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-nginx.min.js"></script>  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-properties.min.js"></script> 
 
     
 
 
 
 
-<script src="https://cdnjs.ariesme.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
-<script src="https://cdnjs.ariesme.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script>
 <script src="/assets/js/search.js"></script>
 
 <script src="/assets/js/single.js"></script>

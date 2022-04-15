@@ -14,7 +14,8 @@
 
 
 <link href="https://fonts.ariesme.com/css2?family=Noto Sans SC:wght@300;400;500;600" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.ariesme.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" />
 
 
 <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
@@ -26,7 +27,9 @@
 <meta name="description" content="Hugo添加返回顶部按钮" />
 
 
- <link rel="stylesheet" href="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/themes/prism-coy.min.css"> 
+
+
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism-coy.min.css"> 
 
 
 <link rel="stylesheet" href="/assets/css/layouts/single.css" />
@@ -369,10 +372,10 @@ if (!doNotTrack) {
 <li>onclick=&ldquo;smoothScrollTop()&rdquo; 点击按钮运行js文件中的smoothScrollTop方法</li>
 <li>title=&ldquo;Go to top&rdquo; 表示光标移动到按钮上时显示的tips</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
-  &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;smoothScrollTop()&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;goTopBtn&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Go to top&#34;</span>&gt;TOP&lt;/<span style="color:#f92672">button</span>&gt;
-&lt;/<span style="color:#f92672">body</span>&gt;
-</code></pre></div><h2 id="h2_2">2. 按钮自定义样式</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;smoothScrollTop()&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;goTopBtn&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Go to top&#34;</span>&gt;TOP&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span></code></pre></div><h2 id="h2_2">2. 按钮自定义样式</h2>
 <p>Hugo站点根目录下的自定义样式文件(./static/css/custom.css)中添加如下代码. 添加css和js文件的方法可以参看<a href="https://www.cloudme.top/post/2019/add_prism_for_hugo/">Hugo添加Prism代码高亮</a>这篇文章中添加prism.css和prism.js文件的方法.</p>
 <ol>
 <li>#name 表示该样式应用于id=&ldquo;name&quot;的元素</li>
@@ -381,34 +384,34 @@ if (!doNotTrack) {
 <li>z-index: 99; 表示z轴参数, 将按钮置于页面最顶层, 防止被其他元素遮盖</li>
 <li>cursor: pointer; 表示光标移动到按钮上部时光标指针变成小手</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">#goTopBtn {
-  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span>; <span style="color:#75715e">/* Hidden by default */</span>
-  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>; <span style="color:#75715e">/* Fixed/sticky position */</span>
-  <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span>; <span style="color:#75715e">/* Place the button at the bottom of the page */</span>
-  <span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span>; <span style="color:#75715e">/* Place the button 30px from the right */</span>
-  <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">99</span>; <span style="color:#75715e">/* Make sure it does not overlap */</span>
-  <span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">none</span>; <span style="color:#75715e">/* Remove borders */</span>
-  <span style="color:#66d9ef">outline</span>: <span style="color:#66d9ef">none</span>; <span style="color:#75715e">/* Remove outline */</span>
-  <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>; <span style="color:#75715e">/* Add a mouse pointer on hover */</span>
-  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>; <span style="color:#75715e">/* Some padding */</span>
-  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">0.3</span><span style="color:#66d9ef">em</span>; <span style="color:#75715e">/* Rounded corners */</span>
-  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">12</span><span style="color:#66d9ef">px</span>; <span style="color:#75715e">/* Increase font size */</span>
-}
-</code></pre></div><p>下面是使用class=&ldquo;btn&quot;后继承于主题中的btn样式部分代码. btn:hover表示光标移动到按钮上部时按钮变色.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* Button */</span>
-.<span style="color:#a6e22e">btn</span> {
-	<span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-	<span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">700</span>;
-	<span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fff</span>;
-	<span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">pre</span><span style="color:#f92672">-</span>line;
-	<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#2a2a2a</span>;
-}
-
-.<span style="color:#a6e22e">btn</span>:<span style="color:#a6e22e">hover</span> {
-	<span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fff</span>;
-	<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#e64946</span>;
-}
-</code></pre></div><h2 id="h2_3">3. 返回顶部行为方法</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>#goTopBtn {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span>; <span style="color:#75715e">/* Hidden by default */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>; <span style="color:#75715e">/* Fixed/sticky position */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span>; <span style="color:#75715e">/* Place the button at the bottom of the page */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span>; <span style="color:#75715e">/* Place the button 30px from the right */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">99</span>; <span style="color:#75715e">/* Make sure it does not overlap */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">none</span>; <span style="color:#75715e">/* Remove borders */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">outline</span>: <span style="color:#66d9ef">none</span>; <span style="color:#75715e">/* Remove outline */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>; <span style="color:#75715e">/* Add a mouse pointer on hover */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>; <span style="color:#75715e">/* Some padding */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">0.3</span><span style="color:#66d9ef">em</span>; <span style="color:#75715e">/* Rounded corners */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">12</span><span style="color:#66d9ef">px</span>; <span style="color:#75715e">/* Increase font size */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>下面是使用class=&ldquo;btn&quot;后继承于主题中的btn样式部分代码. btn:hover表示光标移动到按钮上部时按钮变色.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#75715e">/* Button */</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">btn</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">font-weight</span>: <span style="color:#ae81ff">700</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fff</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">pre-line</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#2a2a2a</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">btn</span>:<span style="color:#a6e22e">hover</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#fff</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#e64946</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="h2_3">3. 返回顶部行为方法</h2>
 <p>返回顶部的方法可以用javascript实现, 也可以用jquery实现. 下面就分开介绍下.</p>
 <h3 id="h3_3_1">3.1. javascript方法</h3>
 <p>Hugo站点根目录下的自定义JavaScript文件(./static/js/custom.js)中添加如下代码. 提供了两种返回方式, 可根据喜好选择其中一种.</p>
@@ -417,114 +420,114 @@ if (!doNotTrack) {
 <li>smoothScrollTop 方法是平滑回滚到顶部</li>
 <li>scrollTopButton 方法只有向下滚动超过20px后才会显示按钮, 其他情况按钮隐藏</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// When the user scrolls down 20px from the top of the document, show the button
-</span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">onscroll</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {<span style="color:#a6e22e">scrollTopButton</span>()};
-
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">scrollTopButton</span>() {
-  <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span> <span style="color:#f92672">||</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span>) {
-    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;goTopBtn&#34;</span>).<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;block&#34;</span>;
-  } <span style="color:#66d9ef">else</span> {
-    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;goTopBtn&#34;</span>).<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;none&#34;</span>;
-  }
-}
-
-<span style="color:#75715e">// When the user clicks on the button, scroll to the top of the document
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">scrollTop</span>() {
-  document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// For Safari
-</span><span style="color:#75715e"></span>  document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// For Chrome, Firefox, IE and Opera
-</span><span style="color:#75715e"></span>}
-
-<span style="color:#75715e">//Smooth scroll to the top of the document
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">smoothScrollTop</span>(){
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">timer</span>  <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
-    <span style="color:#a6e22e">cancelAnimationFrame</span>(<span style="color:#a6e22e">timer</span>);
-    <span style="color:#a6e22e">timer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">requestAnimationFrame</span>(<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fn</span>(){
-        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">oTop</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">||</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollTop</span>;
-        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">oTop</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>){
-            document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">oTop</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">50</span>;
-            <span style="color:#a6e22e">timer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">requestAnimationFrame</span>(<span style="color:#a6e22e">fn</span>);
-        }<span style="color:#66d9ef">else</span>{
-            <span style="color:#a6e22e">cancelAnimationFrame</span>(<span style="color:#a6e22e">timer</span>);
-        }
-    });
-}
-</code></pre></div><h3 id="h3_3_2">3.2. jquery方法</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// When the user scrolls down 20px from the top of the document, show the button
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">onscroll</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {<span style="color:#a6e22e">scrollTopButton</span>()};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">scrollTopButton</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span> <span style="color:#f92672">||</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span>) {
+</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;goTopBtn&#34;</span>).<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;block&#34;</span>;
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;goTopBtn&#34;</span>).<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;none&#34;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// When the user clicks on the button, scroll to the top of the document
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">scrollTop</span>() {
+</span></span><span style="display:flex;"><span>  document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// For Safari
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// For Chrome, Firefox, IE and Opera
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Smooth scroll to the top of the document
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">smoothScrollTop</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">timer</span>  <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cancelAnimationFrame</span>(<span style="color:#a6e22e">timer</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">timer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">requestAnimationFrame</span>(<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fn</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">oTop</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">||</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollTop</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">oTop</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>){
+</span></span><span style="display:flex;"><span>            document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">documentElement</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">oTop</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">50</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">timer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">requestAnimationFrame</span>(<span style="color:#a6e22e">fn</span>);
+</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">cancelAnimationFrame</span>(<span style="color:#a6e22e">timer</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="h3_3_2">3.2. jquery方法</h3>
 <p>上面的样式是根据以前主题写的, 现在更新jquery的方法就顺便记录下当前主题配套的返回按钮样式, css代码如下, 其中返回按钮元素id=&ldquo;gotoTop&rdquo;.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/*gotoTop button*/</span>
-#gotoTop {
-    <span style="color:#66d9ef">position</span>:<span style="color:#66d9ef">fixed</span>;
-    <span style="color:#66d9ef">right</span>:<span style="color:#ae81ff">0</span>;
-    <span style="color:#66d9ef">opacity</span>:<span style="color:#ae81ff">.8</span>;
-    <span style="color:#66d9ef">visibility</span>:<span style="color:#66d9ef">hidden</span>;
-    <span style="color:#66d9ef">bottom</span>:<span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">margin</span>:<span style="color:#ae81ff">0</span> <span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>;
-    <span style="color:#66d9ef">z-index</span>:<span style="color:#ae81ff">99</span>;
-    <span style="color:#66d9ef">transition</span>:<span style="color:#ae81ff">.35</span><span style="color:#66d9ef">s</span>;
-    <span style="color:#66d9ef">transform</span>:scale(<span style="color:#ae81ff">0</span>);
-    <span style="color:#66d9ef">transition</span>:<span style="color:#66d9ef">all</span> <span style="color:#ae81ff">.5</span><span style="color:#66d9ef">s</span>
-}
-#gotoTop.<span style="color:#a6e22e">visible</span> {
-    <span style="color:#66d9ef">opacity</span>:<span style="color:#ae81ff">.8</span>;
-    <span style="color:#66d9ef">visibility</span>:<span style="color:#66d9ef">visible</span>;
-    <span style="color:#66d9ef">transform</span>:scale(<span style="color:#ae81ff">1</span>)
-}
-#gotoTop.<span style="color:#a6e22e">visible</span> <span style="color:#f92672">a</span>:<span style="color:#a6e22e">hover</span> {
-    <span style="color:#66d9ef">outline</span>:<span style="color:#66d9ef">none</span>;
-    <span style="color:#66d9ef">opacity</span>:<span style="color:#ae81ff">.9</span>;
-    <span style="color:#66d9ef">background</span>:<span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>accent)
-}
-#gotoTop <span style="color:#f92672">a</span> {
-    <span style="color:#66d9ef">outline</span>:<span style="color:#66d9ef">none</span>;
-    <span style="color:#66d9ef">text-decoration</span>:<span style="color:#66d9ef">none</span>;
-    <span style="color:#66d9ef">border</span>:<span style="color:#ae81ff">0</span>;
-    <span style="color:#66d9ef">display</span>:<span style="color:#66d9ef">block</span>;
-    <span style="color:#66d9ef">width</span>:<span style="color:#ae81ff">46</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">height</span>:<span style="color:#ae81ff">46</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">background-color</span>:<span style="color:#ae81ff">#212121</span>;
-    <span style="color:#66d9ef">opacity</span>:<span style="color:#ae81ff">.8</span>;
-    <span style="color:#66d9ef">transition</span>:<span style="color:#66d9ef">all</span> <span style="color:#ae81ff">.3</span><span style="color:#66d9ef">s</span>;
-    <span style="color:#66d9ef">border-radius</span>:<span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
-    <span style="color:#66d9ef">text-align</span>:<span style="color:#66d9ef">center</span>;
-    <span style="color:#66d9ef">font-size</span>:<span style="color:#ae81ff">26</span><span style="color:#66d9ef">px</span>
-}
-<span style="color:#f92672">body</span> #gotoTop <span style="color:#f92672">a</span> {
-    <span style="color:#66d9ef">outline</span>:<span style="color:#66d9ef">none</span>;
-    <span style="color:#66d9ef">color</span>:<span style="color:#ae81ff">#fff</span>
-}
-#gotoTop <span style="color:#f92672">a</span>:<span style="color:#a6e22e">after</span> {
-    <span style="color:#66d9ef">outline</span>:<span style="color:#66d9ef">none</span>;
-    <span style="color:#66d9ef">content</span>:<span style="color:#e6db74">&#34;\f106&#34;</span>;
-    <span style="color:#66d9ef">font-family</span>:fontawesome;
-    <span style="color:#66d9ef">position</span>:<span style="color:#66d9ef">relative</span>;
-    <span style="color:#66d9ef">display</span>:<span style="color:#66d9ef">block</span>;
-    <span style="color:#66d9ef">top</span>:<span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transform</span>:translateY(<span style="color:#ae81ff">-55</span><span style="color:#66d9ef">%</span>);
-    <span style="color:#66d9ef">transform</span>:translateY(<span style="color:#ae81ff">-55</span><span style="color:#66d9ef">%</span>);
-    <span style="color:#66d9ef">color</span>:<span style="color:#ae81ff">#ffffff</span>
-}
-</code></pre></div><p>同以前一样, 将返回按钮添加在&lt;footer&gt;元素之前.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--  goto Top button  --&gt;</span>
-&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gotoTop&#34;</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><p>jquery代码部分主要是用animate方法. 按钮的显示与隐藏用visible属性实现.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">/* Back to Top button behaviour */</span>
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">pxShow</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>;
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scrollSpeed</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span>;
-    <span style="color:#a6e22e">$</span>(window).<span style="color:#a6e22e">scroll</span>(<span style="color:#66d9ef">function</span>() {
-        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">$</span>(window).<span style="color:#a6e22e">scrollTop</span>() <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">pxShow</span>) {
-            <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#gotoTop&#34;</span>).<span style="color:#a6e22e">addClass</span>(<span style="color:#e6db74">&#39;visible&#39;</span>);
-        } <span style="color:#66d9ef">else</span> {
-            <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#gotoTop&#34;</span>).<span style="color:#a6e22e">removeClass</span>(<span style="color:#e6db74">&#39;visible&#39;</span>);
-        }
-    });
-
-    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#gotoTop a&#39;</span>).<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>() {
-        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;html, body&#39;</span>).<span style="color:#a6e22e">animate</span>({
-            <span style="color:#a6e22e">scrollTop</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
-        }, <span style="color:#a6e22e">scrollSpeed</span>);
-        ;
-        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
-    });
-</code></pre></div><h2 id="h2_4">4. 更新历史</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#75715e">/*gotoTop button*/</span>
+</span></span><span style="display:flex;"><span>#gotoTop {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">position</span>:<span style="color:#66d9ef">fixed</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">right</span>:<span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">opacity</span>:<span style="color:#ae81ff">.8</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">visibility</span>:<span style="color:#66d9ef">hidden</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">bottom</span>:<span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin</span>:<span style="color:#ae81ff">0</span> <span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">z-index</span>:<span style="color:#ae81ff">99</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transition</span>:<span style="color:#ae81ff">.35</span><span style="color:#66d9ef">s</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transform</span>:scale(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transition</span>:<span style="color:#66d9ef">all</span> <span style="color:#ae81ff">.5</span><span style="color:#66d9ef">s</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>#gotoTop.<span style="color:#a6e22e">visible</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">opacity</span>:<span style="color:#ae81ff">.8</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">visibility</span>:<span style="color:#66d9ef">visible</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transform</span>:scale(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>#gotoTop.<span style="color:#a6e22e">visible</span> <span style="color:#f92672">a</span>:<span style="color:#a6e22e">hover</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">outline</span>:<span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">opacity</span>:<span style="color:#ae81ff">.9</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background</span>:<span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>accent)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>#gotoTop <span style="color:#f92672">a</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">outline</span>:<span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">text-decoration</span>:<span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border</span>:<span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">display</span>:<span style="color:#66d9ef">block</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">width</span>:<span style="color:#ae81ff">46</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">height</span>:<span style="color:#ae81ff">46</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>:<span style="color:#ae81ff">#212121</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">opacity</span>:<span style="color:#ae81ff">.8</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transition</span>:<span style="color:#66d9ef">all</span> <span style="color:#ae81ff">.3</span><span style="color:#66d9ef">s</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-radius</span>:<span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">text-align</span>:<span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-size</span>:<span style="color:#ae81ff">26</span><span style="color:#66d9ef">px</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">body</span> #gotoTop <span style="color:#f92672">a</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">outline</span>:<span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>:<span style="color:#ae81ff">#fff</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>#gotoTop <span style="color:#f92672">a</span>:<span style="color:#a6e22e">after</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">outline</span>:<span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">content</span>:<span style="color:#e6db74">&#34;\f106&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">font-family</span>:fontawesome;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">position</span>:<span style="color:#66d9ef">relative</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">display</span>:<span style="color:#66d9ef">block</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">top</span>:<span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transform</span>:translateY(<span style="color:#ae81ff">-55</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">transform</span>:translateY(<span style="color:#ae81ff">-55</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>:<span style="color:#ae81ff">#ffffff</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>同以前一样, 将返回按钮添加在&lt;footer&gt;元素之前.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--  goto Top button  --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gotoTop&#34;</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>jquery代码部分主要是用animate方法. 按钮的显示与隐藏用visible属性实现.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">/* Back to Top button behaviour */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">pxShow</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scrollSpeed</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$</span>(window).<span style="color:#a6e22e">scroll</span>(<span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">$</span>(window).<span style="color:#a6e22e">scrollTop</span>() <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">pxShow</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#gotoTop&#34;</span>).<span style="color:#a6e22e">addClass</span>(<span style="color:#e6db74">&#39;visible&#39;</span>);
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#gotoTop&#34;</span>).<span style="color:#a6e22e">removeClass</span>(<span style="color:#e6db74">&#39;visible&#39;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#gotoTop a&#39;</span>).<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;html, body&#39;</span>).<span style="color:#a6e22e">animate</span>({
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">scrollTop</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        }, <span style="color:#a6e22e">scrollSpeed</span>);
+</span></span><span style="display:flex;"><span>        ;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>    });
+</span></span></code></pre></div><h2 id="h2_4">4. 更新历史</h2>
 <table>
 <thead>
 <tr>
@@ -758,17 +761,21 @@ if (!doNotTrack) {
 
 
 
-    <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.min.js"></script>
 
-     <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-bash.min.js"></script>  <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-java.min.js"></script>  <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-toml.min.js"></script>  <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-yaml.min.js"></script>  <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-nginx.min.js"></script>  <script src="https://cdnjs.ariesme.com/ajax/libs/prism/1.23.0/components/prism-properties.min.js"></script> 
+    
+     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-bash.min.js"></script>  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-toml.min.js"></script>  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-yaml.min.js"></script>  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-nginx.min.js"></script>  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-properties.min.js"></script> 
 
     
 
 
 
 
-<script src="https://cdnjs.ariesme.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
-<script src="https://cdnjs.ariesme.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script>
 <script src="/assets/js/search.js"></script>
 
 <script src="/assets/js/single.js"></script>
