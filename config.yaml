@@ -14,7 +14,7 @@ markup:
     ordered: false
 
 # Enable Google Analytics
-googleAnalytics: UA-134996642-1
+#googleAnalytics: UA-134996642-1
 
 # Enable Disqus forum
 #disqusShortname: does-not-exist
