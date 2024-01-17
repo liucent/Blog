@@ -1,3 +1,3 @@
 # Blog with Hugo
 # DartNode
-![logo](https://github.com/liucent/Blog/assets/47551571/f0a022cc-3be5-4503-bcd5-37b0a1363348)
+![image](https://github.com/liucent/Blog/assets/47551571/f79ff1ad-6408-4deb-a70b-68c7ae71b5a1)
